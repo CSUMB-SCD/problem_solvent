@@ -5,16 +5,26 @@ from .models import Greeting
 
 # Create your views here.
 def index(request):
-    # return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
+    
+def problems(request):
+    return render(request, 'problems.html')
+    
+def account(request):
+    return render(request, 'account.html')
+    
+def leaderboard(request):
+    return render(request, 'leaderboard.html')
 
-
+def chat(request):
+    return render(request, 'chat.html')
+    
 def db(request):
 
     greeting = Greeting()
     greeting.save()
 
     greetings = Greeting.objects.all()
-
+    print(request)
     return render(request, 'db.html', {'greetings': greetings})
 
