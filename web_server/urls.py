@@ -4,6 +4,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 import pages.views
+import chat.views
 
 # Examples:
 # url(r'^$', 'web_server.views.home', name='home'),
@@ -16,5 +17,7 @@ urlpatterns = [
     url(r'^problems', pages.views.problems, name='problems'),
     url(r'^account', pages.views.account, name='account'),
     url(r'^leaderboard', pages.views.leaderboard, name='leaderboard'),
-    url(r'^chat', pages.views.chat, name='chat')
+
+
+    url(r'^chat', chat.views.index, name='chat')
 ]

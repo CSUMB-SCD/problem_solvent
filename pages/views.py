@@ -15,9 +15,6 @@ def account(request):
     
 def leaderboard(request):
     return render(request, 'leaderboard.html')
-
-def chat(request):
-    return render(request, 'chat.html')
     
 def db(request):
 
