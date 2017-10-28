@@ -1,8 +1,10 @@
 # Running the App
+## Run Configuration is Necessary
+You must use the run configuration called RunDjango because the environment variable is required
+Then you can use the commands below
+** The VM will not work anymore with the new postgresql db
 
 #Run these commands in the terminal
-    cd problem_solvent
-    pipenv shell
     python manage.py runserver 0.0.0.0:8080
 
 # other commands you may want
