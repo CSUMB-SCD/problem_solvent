@@ -12,3 +12,9 @@ python manage.py test
 
 ## if static files aren't loading
 python manage.py collectstatic
+
+## to add a new app
+python manage.py startapp your_app_name
+
+## setup the apps (creates db entries and gets everything ready)
+python manage.py migrate
