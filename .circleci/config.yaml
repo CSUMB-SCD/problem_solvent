@@ -44,7 +44,7 @@ jobs:
           name: run tests
           command: |
             . prob_solv/bin/activate
-            pytest
+            python manage.py test
 
       - store_artifacts:
           path: test-reports
