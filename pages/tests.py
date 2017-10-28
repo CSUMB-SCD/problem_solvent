@@ -11,9 +11,9 @@ class SimpleTest(TestCase):
     def test_details(self):
         pass
         # Create an instance of a GET request.
-        #request = self.factory.get('/')
-        #request.user = AnonymousUser()
+        request = self.factory.get('/')
+        request.user = AnonymousUser()
 
         # Test my_view() as if it were deployed at /customer/details
-        #response = index(request)
-        #self.assertEqual(response.status_code, 200)
+        response = index(request)
+        self.assertEqual(response.status_code, 200)
