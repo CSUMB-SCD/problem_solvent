@@ -39,8 +39,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'pages',
-    'chat'
+    'chat',
+    'chat_ws',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +59,23 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'web_server.urls'
+ROOT_URLCONF = 'problem_solvent.urls'
+
+
+redis_host = os.environ.get('REDIS_HOST', 'localhost')
+
+# Channel layer definitions
+# http://channels.readthedocs.org/en/latest/deploying.html#setting-up-a-channel-backend
+CHANNEL_LAYERS = {
+    "default": {
+        # This example app uses the Redis channel layer implementation asgi_redis
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [(redis_host, 6379)],
+        },
+        "ROUTING": "problem_solvent.routing.channel_routing",
+    },
+}
 
 TEMPLATES = [
     {
@@ -76,8 +94,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'web_server.wsgi.application'
+WSGI_APPLICATION = 'problem_solvent.wsgi.application'
 
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgiref.inmemory.ChannelLayer",
+        "ROUTING": "problem_solvent.routing.channel_routing",
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
