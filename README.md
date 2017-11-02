@@ -20,3 +20,6 @@ python manage.py startapp your_app_name
 
 ## setup the apps (creates db entries and gets everything ready)
 python manage.py migrate
+
+## start postgres server
+service postgresql start
