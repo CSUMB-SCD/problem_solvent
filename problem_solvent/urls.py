@@ -10,7 +10,7 @@ import chat_ws.views
 import chat.views
 
 # Examples:
-# url(r'^$', 'web_server.views.home', name='home'),
+# url(r'^$', 'problem_solvent.views.home', name='home'),
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
