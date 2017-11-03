@@ -1,1 +1,1 @@
-web: gunicorn problem_solvent.wsgi --log-file -
+web: 

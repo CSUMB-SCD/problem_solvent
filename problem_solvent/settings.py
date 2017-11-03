@@ -104,15 +104,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'problem_solvent.wsgi.application'
-
-
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "asgiref.inmemory.ChannelLayer",
-        "ROUTING": "problem_solvent.routing.channel_routing",
-    },
-}
+#WSGI_APPLICATION = 'problem_solvent.wsgi.application'
+#
+#
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "asgi_redis.RedisChannelLayer",
+#         "ROUTING": "problem_solvent.routing.channel_routing",
+#     },
+# }
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
@@ -179,4 +179,3 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
