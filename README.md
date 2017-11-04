@@ -28,3 +28,7 @@ sudo service postgresql start
 ## start redis service
 if something on port 6397 isn't working
 sudo service redis-server start
+
+## demo user for Heroku
+username: test_user
+password: soluti0n (there is a zero instead of O)
