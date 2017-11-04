@@ -22,4 +22,9 @@ python manage.py startapp your_app_name
 python manage.py migrate
 
 ## start postgres server
-service postgresql start
+if something on port 5432 isn't working
+sudo service postgresql start
+
+## start redis service
+if something on port 6397 isn't working
+sudo service redis-server start
