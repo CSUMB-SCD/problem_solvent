@@ -65,7 +65,7 @@ LOGIN_REDIRECT_URL = '/chat'
 redis_url = urlparse(os.environ.get('REDIS_URL'))
 redis_host = os.environ.get('REDIS_HOST', 'redis://127.0.0.1:6379/0')
 if "HEROKU_REDIS_GREEN_URL" in os.environ:
-    redis_host = os.environ('HEROKU_REDIS_GREEN_URL')
+    redis_host = os.environ.get('HEROKU_REDIS_GREEN_URL')
 # Channel layer definitions
 # http://channels.readthedocs.org/en/latest/deploying.html#setting-up-a-channel-backend
 CHANNEL_LAYERS = {
