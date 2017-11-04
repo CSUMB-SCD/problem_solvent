@@ -62,8 +62,10 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'problem_solvent.urls'
 LOGIN_REDIRECT_URL = '/chat'
 
-redis_host = os.environ.get('REDIS_HOST', 'localhost')
-
+redis_url = urlparse(os.environ.get('REDIS_URL'))
+redis_host = os.environ.get('REDIS_HOST', 'redis://127.0.0.1:6379/0')
+if "HEROKU_REDIS_GREEN_URL" in os.environ:
+    redis_host = os.environ('HEROKU_REDIS_GREEN_URL')
 # Channel layer definitions
 # http://channels.readthedocs.org/en/latest/deploying.html#setting-up-a-channel-backend
 CHANNEL_LAYERS = {
@@ -71,12 +73,12 @@ CHANNEL_LAYERS = {
         # This example app uses the Redis channel layer implementation asgi_redis
         "BACKEND": "asgi_redis.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [(redis_host, 6379)],
+            "hosts": [(redis_host)],
         },
         "ROUTING": "problem_solvent.routing.channel_routing",
     },
 }
-redis_url = urlparse(os.environ.get('REDIS_URL'))
+
 CACHES = {
     "default": {
          "BACKEND": "redis_cache.RedisCache",
