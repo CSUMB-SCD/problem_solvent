@@ -14,7 +14,8 @@ import chat.views
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
-    url(r'^$', pages.views.index, name='index'),
+    url(r'^$', chat_ws.views.index, name='chat'),
+    url(r'^index', pages.views.index, name='index'),
     url(r'^db', pages.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^problems', pages.views.problems, name='problems'),

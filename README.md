@@ -1,8 +1,14 @@
 # Running the App
+1. Run the RunDjango Run Configuration
+2. python manage.py runserver 0:8080
+3. If port 5432 is giving error run: sudo service postgresql start
+4. If port 6379 is giving error run: sudo service redis-server start
+5. Repeat step 2 after starting Redis and Postgres
+
+Go to website: https://problem-solvent-nigelhardy.c9users.io/
+
 ## Run Configuration is Necessary
 You must use the run configuration called RunDjango because the environment variable is required
-Then you can use the commands below
-** The VM will not work anymore with the new postgresql db
 
 #Run these commands in the terminal
     python manage.py runserver 0.0.0.0:8080
