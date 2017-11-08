@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Room
+from .models import UsersConnected
 
+admin.site.register(UsersConnected)
 
 admin.site.register(
     Room,

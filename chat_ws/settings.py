@@ -8,6 +8,7 @@ MSG_TYPE_ALERT = 2  # For red & dangerous alerts
 MSG_TYPE_MUTED = 3  # For just OK information that doesn't bother users
 MSG_TYPE_ENTER = 4  # For just OK information that doesn't bother users
 MSG_TYPE_LEAVE = 5  # For just OK information that doesn't bother users
+MSG_TYPE_COUNT = 6  # Keep a count of connected users 
 
 MESSAGE_TYPES_CHOICES = getattr(settings, 'MESSAGE_TYPES_CHOICES', (
     (MSG_TYPE_MESSAGE, 'MESSAGE'),
@@ -15,8 +16,9 @@ MESSAGE_TYPES_CHOICES = getattr(settings, 'MESSAGE_TYPES_CHOICES', (
     (MSG_TYPE_ALERT, 'ALERT'),
     (MSG_TYPE_MUTED, 'MUTED'),
     (MSG_TYPE_ENTER, 'ENTER'),
-    (MSG_TYPE_LEAVE, 'LEAVE'))
-                                )
+    (MSG_TYPE_LEAVE, 'LEAVE'),
+    (MSG_TYPE_LEAVE, 'COUNT'))
+                               ) 
 
 MESSAGE_TYPES_LIST = getattr(settings, 'MESSAGE_TYPES_LIST',
                              [MSG_TYPE_MESSAGE,
@@ -24,5 +26,6 @@ MESSAGE_TYPES_LIST = getattr(settings, 'MESSAGE_TYPES_LIST',
                               MSG_TYPE_ALERT,
                               MSG_TYPE_MUTED,
                               MSG_TYPE_ENTER,
+                              MSG_TYPE_COUNT,
                               MSG_TYPE_LEAVE]
                              )

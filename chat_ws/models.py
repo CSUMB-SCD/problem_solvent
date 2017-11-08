@@ -33,9 +33,19 @@ class Room(models.Model):
         """
         Called to send a message to the room on behalf of a user.
         """
-        final_msg = {'room': str(self.id), 'message': message, 'username': user.username, 'msg_type': msg_type}
+        final_msg = {'room': str(self.id), 'message': message, 'username': user, 'msg_type': msg_type}
 
         # Send out the message to everyone in the room
         self.websocket_group.send(
             {"text": json.dumps(final_msg)}
         )
+        
+
+@python_2_unicode_compatible
+class UsersConnected(models.Model):
+    # username
+    username = models.CharField(max_length=255)
+    room = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return (self.username + " " + self.room)

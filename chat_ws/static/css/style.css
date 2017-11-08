@@ -31,6 +31,9 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
     font-family: sans-serif;
+    background-image: url("images/cloud.jpg");
+    background-repeat: repeat-x;
+
 }
 ol, ul {
     list-style: none;

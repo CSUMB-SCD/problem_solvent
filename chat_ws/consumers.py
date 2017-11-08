@@ -4,6 +4,7 @@ from channels.auth import channel_session_user_from_http, channel_session_user
 
 from .settings import MSG_TYPE_LEAVE, MSG_TYPE_ENTER, NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS
 from .models import Room
+from .models import UsersConnected
 from .utils import get_room_or_error, catch_client_error
 from .exceptions import ClientError
 
@@ -38,12 +39,14 @@ def ws_receive(message):
 @channel_session_user
 def ws_disconnect(message):
     # Unsubscribe from any connected rooms
+    
     for room_id in message.channel_session.get("rooms", set()):
         try:
+            UsersConnected.objects.get(username=message.channel_session["user"],room=room_id).delete()
             room = Room.objects.get(pk=room_id)
             # Removes us from the room's send group. If this doesn't get run,
             # we'll get removed once our first reply message expires.
-            room.websocket_group.discard(message.reply_channel)
+            room.websocket_group.discard(message.reply_channel) 
         except Room.DoesNotExist:
             pass
 
@@ -57,20 +60,30 @@ def ws_disconnect(message):
 # message.channel_session object without the auth fetching overhead.
 @channel_session_user
 @catch_client_error
-def chat_join(message):
+def chat_join(message): # send out number of connected users 
+     ## UsersConnected.objects.all()
+    
+    
     # Find the room they requested (by ID) and add ourselves to the send group
     # Note that, because of channel_session_user, we have a message.user
     # object that works just like request.user would. Security!
-    room = get_room_or_error(message["room"], message.user)
-
+    room = get_room_or_error(message["room"], message["user"])
+    
+    usconn = UsersConnected()
+    usconn.username = message["user"]
+    usconn.room = message["room"]
+    usconn.save()
+    
+    
     # Send a "enter message" to the room if available
     if NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS:
-        room.send_message(None, message.user, MSG_TYPE_ENTER)
+        room.send_message(None, message["user"], MSG_TYPE_ENTER)
 
     # OK, add them in. The websocket_group is what we'll send messages
     # to so that everyone in the chat room gets them.
     room.websocket_group.add(message.reply_channel)
     message.channel_session['rooms'] = list(set(message.channel_session['rooms']).union([room.id]))
+    message.channel_session['user'] = message["user"]
     # Send a message back that will prompt them to open the room
     # Done server-side so that we could, for example, make people
     # join rooms automatically.
@@ -84,14 +97,14 @@ def chat_join(message):
 
 @channel_session_user
 @catch_client_error
-def chat_leave(message):
+def chat_leave(message): 
     # Reverse of join - remove them from everything.
-    room = get_room_or_error(message["room"], message.user)
-
+    room = get_room_or_error(message["room"], message["user"])
+    UsersConnected.objects.get(username=message["user"], room=message["room"]).delete()
     # Send a "leave message" to the room if available
     if NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS:
-        room.send_message(None, message.user, MSG_TYPE_LEAVE)
-
+        room.send_message(None, message["user"], MSG_TYPE_LEAVE)
+    
     room.websocket_group.discard(message.reply_channel)
     message.channel_session['rooms'] = list(set(message.channel_session['rooms']).difference([room.id]))
     # Send a message back that will prompt them to close the room
@@ -106,9 +119,9 @@ def chat_leave(message):
 @catch_client_error
 def chat_send(message):
     # Check that the user in the room
-    if int(message['room']) not in message.channel_session['rooms']:
-        raise ClientError("ROOM_ACCESS_DENIED")
+    # if int(message['room']) not in message.channel_session['rooms']:
+    #     raise ClientError("ROOM_ACCESS_DENIED")
     # Find the room they're sending to, check perms
     room = get_room_or_error(message["room"], message.user)
     # Send the message along
-    room.send_message(message["message"], message.user)
+    room.send_message(message["message"], message["user"])
