@@ -2,12 +2,18 @@ import json
 from channels import Channel
 from channels.auth import channel_session_user_from_http, channel_session_user
 
-from .settings import MSG_TYPE_LEAVE, MSG_TYPE_ENTER, NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS, MSG_TYPE_DUPUSER
+from .settings import MSG_TYPE_LEAVE, MSG_TYPE_ENTER, NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS, MSG_TYPE_COUNT
 from .models import Room
 from .models import UsersConnected
 from .utils import get_room_or_error, catch_client_error
 from .exceptions import ClientError
 
+def sendUserConnectedInfo(room, roomId):
+    user_list = UsersConnected.objects.all()
+    user_name_list = []
+    for c_user in user_list:
+        user_name_list.append(c_user.username)
+    room.send_connected_status(user_name_list, len(user_name_list), roomId)
 
 ### WebSocket handling ###
 
@@ -44,9 +50,10 @@ def ws_disconnect(message):
         try:
             UsersConnected.objects.get(username=message.channel_session["user"],room=room_id).delete()
             room = Room.objects.get(pk=room_id)
+            sendUserConnectedInfo(room, room_id)
             # Removes us from the room's send group. If this doesn't get run,
             # we'll get removed once our first reply message expires.
-            room.websocket_group.discard(message.reply_channel) 
+            room.websocket_group.discard(message.reply_channel)
         except Room.DoesNotExist:
             pass
 
@@ -61,8 +68,6 @@ def ws_disconnect(message):
 @channel_session_user
 @catch_client_error
 def chat_join(message): # send out number of connected users 
-     ## UsersConnected.objects.all()
-    
     
     # Find the room they requested (by ID) and add ourselves to the send group
     # Note that, because of channel_session_user, we have a message.user
@@ -70,21 +75,18 @@ def chat_join(message): # send out number of connected users
     room = get_room_or_error(message["room"], message["user"])
     # check if user already in room, if they are, don't add them again
     try:
-        userAlreadyConnected = UsersConnected.objects.get(username=message["user"],room=message["room"])
-        room.send_message("Duplicate name. Please refresh and choose a different name.", "Duplicate User", MSG_TYPE_DUPUSER)
-        return
+        UsersConnected.objects.get(username=message["user"],room=message["room"]).delete()
     except Exception as e:
-        usconn = UsersConnected()
-        usconn.username = message["user"]
-        usconn.room = message["room"]
-        usconn.save()
-        
-    
+        pass
+    usconn = UsersConnected()
+    usconn.username = message["user"]
+    usconn.room = message["room"]
+    usconn.save()
+    sendUserConnectedInfo(room, message["room"])
     
     # Send a "enter message" to the room if available
     if NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS:
         room.send_message(None, message["user"], MSG_TYPE_ENTER)
-
     # OK, add them in. The websocket_group is what we'll send messages
     # to so that everyone in the chat room gets them.
     room.websocket_group.add(message.reply_channel)
@@ -110,6 +112,8 @@ def chat_leave(message):
     # Send a "leave message" to the room if available
     if NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS:
         room.send_message(None, message["user"], MSG_TYPE_LEAVE)
+    
+    sendUserConnectedInfo(room, message["room"])
     
     room.websocket_group.discard(message.reply_channel)
     message.channel_session['rooms'] = list(set(message.channel_session['rooms']).difference([room.id]))

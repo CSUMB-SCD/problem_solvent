@@ -1,10 +1,13 @@
 {% extends "chat_base.html" %}
 
-{% block title %}MultiChat Example{% endblock %}
-{% block header_text %}MultiChat Example{% endblock %}
+{% block title %}Problem Solvent{% endblock %}
+{% block header_text %}Problem Solvent Public Chat{% endblock %}
 
 {% block content %}
-
+    <div id="count_div" style="display:none;border:1px black solid;background-color:white;">
+        <p id="count_label">Connected users: 0</p>
+    </div>
+    
     <ul class="rooms">
         {% for room in rooms %}
             <li id='public-chat' class="room-link" data-room-id="{{ room.id }}">Join {{ room }}</li>
@@ -129,12 +132,16 @@
                             break;
                         case 6:
                             // user count
-                            ok_msg = "<div class='contextual-message text-muted'>" + user_count +
-                                    " connected users!" +
-                                    "</div>";
+                            // data.count
+                            // data.users (list of user names)
+                            $("#count_label").html("Users connected: " + data.count + "<br>Users connected: " + data.users);
+                            $("#count_div").show();
+
+                            return;
                             break;
                         case 7:
                             alert(data.message);
+                            return;
                         default:
                             console.log("Unsupported message type!");
                             return;
@@ -165,6 +172,7 @@
                         "room": roomId,
                         "user": username
                     });
+                    $("#count_div").hide();
                 } else {
                     // Join room
                     console.log("Joining room.");

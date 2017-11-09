@@ -5,7 +5,7 @@
 4. If port 6379 is giving error run: sudo service redis-server start
 5. Repeat step 2 after starting Redis and Postgres
 
-Go to website: https://problem-solvent-nigelhardy.c9users.io/
+Go to website: https://problem-solvent-nigelhardy.c9users.io:8080
 
 ## Run Configuration is Necessary
 You must use the run configuration called RunDjango because the environment variable is required

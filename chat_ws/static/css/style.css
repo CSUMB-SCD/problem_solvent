@@ -115,14 +115,14 @@ p {
         font-weight: bold;
     }
     #chats .messages {
-        height: 600px;
+        height: 500px;
         overflow: auto;
         margin: 2px 0 5px 0;
     }
     #chats .username {
         display: inline-block;
         color: #C07A36;
-        width: 100px;
+        width: 200px;
         font-weight: bold;
     }
     #chats .contextual-message{
@@ -144,4 +144,11 @@ p {
     }
     #chats span {
         padding:2px;
+    }
+    #count_div {
+        height: 70px;
+        margin: 2px 0 20px 0;
+        background-color: rgba(255,255,255,.8) !important;
+        border: 1px solid #ccc !important;
+        width: 100% !important;
     }

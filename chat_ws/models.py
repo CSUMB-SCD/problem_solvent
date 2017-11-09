@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.six import python_2_unicode_compatible
 from channels import Group
 
-from .settings import MSG_TYPE_MESSAGE
+from .settings import MSG_TYPE_MESSAGE, MSG_TYPE_COUNT
 
 
 @python_2_unicode_compatible
@@ -38,7 +38,16 @@ class Room(models.Model):
         # Send out the message to everyone in the room
         self.websocket_group.send(
             {"text": json.dumps(final_msg)}
-        )
+        ) # make copy and make it send connected users 
+        
+   
+    def send_connected_status(self, user_list, count, room):
+        final_msg = { 'room': str(self.id), 'users': user_list, 'count': count, 'msg_type': MSG_TYPE_COUNT }
+        
+        self.websocket_group.send(
+            {"text": json.dumps(final_msg)}
+        ) 
+        
         
 
 @python_2_unicode_compatible
