@@ -2,7 +2,7 @@ import json
 from channels import Channel
 from channels.auth import channel_session_user_from_http, channel_session_user
 
-from .settings import MSG_TYPE_LEAVE, MSG_TYPE_ENTER, NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS
+from .settings import MSG_TYPE_LEAVE, MSG_TYPE_ENTER, NOTIFY_USERS_ON_ENTER_OR_LEAVE_ROOMS, MSG_TYPE_DUPUSER
 from .models import Room
 from .models import UsersConnected
 from .utils import get_room_or_error, catch_client_error
@@ -68,11 +68,17 @@ def chat_join(message): # send out number of connected users
     # Note that, because of channel_session_user, we have a message.user
     # object that works just like request.user would. Security!
     room = get_room_or_error(message["room"], message["user"])
-    
-    usconn = UsersConnected()
-    usconn.username = message["user"]
-    usconn.room = message["room"]
-    usconn.save()
+    # check if user already in room, if they are, don't add them again
+    try:
+        userAlreadyConnected = UsersConnected.objects.get(username=message["user"],room=message["room"])
+        room.send_message("Duplicate name. Please refresh and choose a different name.", "Duplicate User", MSG_TYPE_DUPUSER)
+        return
+    except Exception as e:
+        usconn = UsersConnected()
+        usconn.username = message["user"]
+        usconn.room = message["room"]
+        usconn.save()
+        
     
     
     # Send a "enter message" to the room if available

@@ -7,10 +7,15 @@
 
     <ul class="rooms">
         {% for room in rooms %}
-            <li class="room-link" data-room-id="{{ room.id }}">{{ room }}</li>
+            <li id='public-chat' class="room-link" data-room-id="{{ room.id }}">Join {{ room }}</li>
         {% empty %}
             <p class="empty">No chat rooms defined. Maybe make some in the <a href="{% url 'admin:index' %}">admin</a>?</p>
         {% endfor %}
+        <!--{% for room in rooms %}-->
+        <!--    <li class="room-link" data-room-id="{{ room.id }}">Join {{ room }}</li>-->
+        <!--{% empty %}-->
+        <!--    <p class="empty">No chat rooms defined. Maybe make some in the <a href="{% url 'admin:index' %}">admin</a>?</p>-->
+        <!--{% endfor %}-->
     </ul>
 
     <div id="chats">
@@ -26,19 +31,21 @@
             do {
                 name_input=prompt("Please enter your name");
             } while(name_input.length < 1);
+            
             return name_input;
         }
         var username = "Anonymous";
-        var user_count = 0; 
-        username = get_name();
+        var user_count = 0;
         
         $(function () {
+            username = get_name();
             // Correctly decide between ws:// and wss://
             var ws_path = "/chat_ws/stream/";
             console.log("Connecting to " + ws_path);
 
             var webSocketBridge = new channels.WebSocketBridge();
             webSocketBridge.connect(ws_path);
+            
             // Handle incoming messages
             webSocketBridge.listen(function(data) {
                 // Decode the JSON
@@ -121,11 +128,13 @@
                                     "</div>";
                             break;
                         case 6:
-                            // User left room
+                            // user count
                             ok_msg = "<div class='contextual-message text-muted'>" + user_count +
                                     " connected users!" +
                                     "</div>";
                             break;
+                        case 7:
+                            alert(data.message);
                         default:
                             console.log("Unsupported message type!");
                             return;
@@ -171,6 +180,12 @@
             // Helpful debugging
             webSocketBridge.socket.onopen = function () {
                 console.log("Connected to chat socket");
+                $("li.room-link").addClass("joined");
+                    webSocketBridge.send({
+                        "command": "join",
+                        "room": 1,
+                        "user": username
+                    });
             };
             webSocketBridge.socket.onclose = function () {
                 console.log("Disconnected from chat socket");
