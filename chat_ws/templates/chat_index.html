@@ -134,14 +134,11 @@
                             // user count
                             // data.count
                             // data.users (list of user names)
-                            $("#count_label").html("Users connected: " + data.count + "<br>Users connected: " + data.users);
+                            $("#count_label").html("Online: " + data.count + " User(s)<br>Names: " + data.users);
                             $("#count_div").show();
 
                             return;
                             break;
-                        case 7:
-                            alert(data.message);
-                            return;
                         default:
                             console.log("Unsupported message type!");
                             return;
