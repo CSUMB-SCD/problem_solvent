@@ -14,7 +14,7 @@ We have a Cloud9 workspace, so we can easily work on something and avoid merge c
 If the app crashes, then it won't delete connected users. Should probably reset that table in the db on startup.
 
 ## How would you improve it if you had more time?
-Integrate it into our application's theme better. Right now it is on its own stylistically.
+Integrate it into our application's theme better. Right now it is on its own stylistically. It also asks for your name using a prompt, which is not elegant.
 
 
 # Running the App
