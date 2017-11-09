@@ -1,3 +1,22 @@
+# Homework 5 Questions
+Team Members: 
+
+* Nigel Hardy: Worked on getting the environment working with Python/Django/Websockets/Redis/Postgres and setup the backend.
+
+* Meya Gorbea: Worked on the front end displaying messages and the user count/list.
+
+* Manual Gonzalez: Researched Django Channels
+
+## Our Strategy
+We have a Cloud9 workspace, so we can easily work on something and avoid merge conflicts. We also split up the tasks into backend, frontend, and deployment. 
+
+## What are known problems, if any, with your project?
+If the app crashes, then it won't delete connected users. Should probably reset that table in the db on startup.
+
+## How would you improve it if you had more time?
+Integrate it into our application's theme better. Right now it is on its own stylistically.
+
+
 # Running the App
 1. Run the RunDjango Run Configuration
 2. python manage.py runserver 0:8080
