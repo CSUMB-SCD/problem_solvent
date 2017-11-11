@@ -20,7 +20,8 @@ urlpatterns = [
     url(r'^db', pages.views.db, name='db'),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^problems', problems.views.index, name='problems'),
+    url(r'^problems/$', problems.views.index, name='problems'),
+    url(r'^problems/([0-9]{4})/$', problems.views.problem, name='problem'),
 
     url(r'^user', pages.views.account, name='user'),
     url(r'^leaderboard', pages.views.leaderboard, name='leaderboard'),
