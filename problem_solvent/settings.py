@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'pages',
     'chat',
     'chat_ws',
+    'problems',
 )
 
 MIDDLEWARE_CLASSES = (
