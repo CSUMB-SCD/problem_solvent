@@ -9,6 +9,7 @@ import pages.views
 import chat_ws.views
 import chat.views
 import problems.views
+import account.views
 
 # Examples:
 # url(r'^$', 'problem_solvent.views.home', name='home'),
@@ -21,13 +22,18 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^problems/$', problems.views.index, name='problems'),
-    url(r'^problems/([0-9]{4})/$', problems.views.problem, name='problem'),
+    url(r'^problem/([0-9]{1})/$', problems.views.problem, name='problem'),
+    url(r'^problem/([0-9]{2})/$', problems.views.problem, name='problem'),
+    url(r'^problem/([0-9]{3})/$', problems.views.problem, name='problem'),
+    url(r'^problem/([0-9]{4})/$', problems.views.problem, name='problem'),
+    url(r'^newproblem/$', problems.views.new_problem, name='new problem'),\
 
-    url(r'^user', pages.views.account, name='user'),
+    url(r'^account/$', account.views.index, name='account'),
+
     url(r'^leaderboard', pages.views.leaderboard, name='leaderboard'),
     url(r'^oldchat', chat.views.index, name='oldchat'),
     url(r'^chat', chat_ws.views.index, name='chat'),
-    url(r'^accounts/login/$', login),
-    url(r'^accounts/logout/$', logout)
+    url(r'^login/$', login),
+    url(r'^logout/$', logout)
 
 ]

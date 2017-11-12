@@ -10,8 +10,8 @@ def index(request):
 def problems(request):
     return render(request, 'problems.html')
     
-def account(request):
-    return render(request, 'account.html')
+# def account(request):
+#     return render(request, 'account.html')
     
 def leaderboard(request):
     return render(request, 'leaderboard.html')

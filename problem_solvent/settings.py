@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'chat',
     'chat_ws',
     'problems',
+    'account'
 )
 
 MIDDLEWARE_CLASSES = (

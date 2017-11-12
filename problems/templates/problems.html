@@ -33,10 +33,11 @@
 							</div>
 							<div class="6u 12u(mobile)">
 								<h3>{{ problem.title }}</h3>
-
+								<h4>Author: {{ problem.owner.username }}</h4>
+								<h4>{{ problem.points }} Points</h4>
 								<p>{{ problem.description }}
 								</p>
-								<a href="#">More Info</a>
+								<a href="/problem/{{ problem.id }}">More Info</a>
 							</div>
 						</div>
 					</div>
