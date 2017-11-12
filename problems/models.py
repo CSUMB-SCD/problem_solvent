@@ -8,9 +8,9 @@ class Problem(models.Model):
     # Title string
     title = models.CharField(max_length=100)
     # Created by (User Id)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=None, related_name='user_owner')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=None, related_name='problem_owner')
     # Date created
-    created = models.DateField()
+    created = models.DateTimeField()
     # IsSolved bool
     isSolved = models.BooleanField(default=False)
     # User id who solved problem
@@ -37,3 +37,24 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     def __str__(self):
         return self.name
+
+class Post(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    likes = models.IntegerField()
+    problem = models.ForeignKey('Problem', on_delete=models.SET_NULL, null=True)
+    date = models.DateTimeField()
+    text = models.CharField(max_length=280)
+    def __str__(self):
+        return self.text
+
+    class Meta:
+        abstract = True
+
+
+class Solution(Post):
+    models.OneToOneField(to=Post, parent_link=True, related_name="parent_post_solution")
+    isChosen = models.BooleanField(default=False)
+
+class Comment(Post):
+    models.OneToOneField(to=Post, parent_link=True, related_name="parent_post_comment")
+    hidden = models.BooleanField(default=False)

@@ -10,6 +10,7 @@ import chat_ws.views
 import chat.views
 import problems.views
 import account.views
+import leaderboard.views
 
 # Examples:
 # url(r'^$', 'problem_solvent.views.home', name='home'),
@@ -30,7 +31,7 @@ urlpatterns = [
 
     url(r'^account/$', account.views.index, name='account'),
 
-    url(r'^leaderboard', pages.views.leaderboard, name='leaderboard'),
+    url(r'^leaderboard', leaderboard.views.index, name='leaderboard'),
     url(r'^oldchat', chat.views.index, name='oldchat'),
     url(r'^chat', chat_ws.views.index, name='chat'),
     url(r'^login/$', login),
