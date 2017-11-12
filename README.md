@@ -57,3 +57,9 @@ sudo service redis-server start
 ## demo user for Heroku
 username: test_user
 password: soluti0n (there is a zero instead of O)
+
+## backup db
+python manage.py dumpdata > db.json
+
+## restore db
+python manage.py loaddata db.json
