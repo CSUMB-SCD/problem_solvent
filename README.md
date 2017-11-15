@@ -16,6 +16,8 @@ If the app crashes, then it won't delete connected users. Should probably reset 
 ## How would you improve it if you had more time?
 Integrate it into our application's theme better. Right now it is on its own stylistically. It also asks for your name using a prompt, which is not elegant.
 
+Admin account: prob_solv
+Password: 41SOLUTION**
 
 # Running the App
 1. Run the RunDjango Run Configuration
@@ -25,7 +27,7 @@ Integrate it into our application's theme better. Right now it is on its own sty
 5. Repeat step 2 after starting Redis and Postgres
 
 Go to website: https://problem-solvent-nigelhardy.c9users.io:8080
-
+Theme Website: https://html5up.net/alpha
 ## Run Configuration is Necessary
 You must use the run configuration called RunDjango because the environment variable is required
 
@@ -58,6 +60,8 @@ sudo service redis-server start
 username: test_user
 password: soluti0n (there is a zero instead of O)
 
+username: first
+password: soluti0n
 ## backup db
 python manage.py dumpdata > db.json
 

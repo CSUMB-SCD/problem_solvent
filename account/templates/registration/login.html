@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Account</title>
+		<title>Problem Solvent: Login</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="/static/assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -22,22 +22,19 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2>Leaderboard</h2>
+						<h2>Login</h2>
 
 					</header>
                     <div class="box">
 						<div class="row">
 							<div class="12u">
-								<table>
-									<tbody>
-										<tr>
-										 {% for user in users %}
-	                                   		<td><a href = "/account/{{user.user.id}}" ><img src = "" alt="image" height="42" width="42"></img></a> Rank: {{ user.rank }} <li>User: <a href = "/account/{{user.user.id}}" >{{ user.user.username }}</a></li> <li>Points: {{ user.points }}</li></td>
-	                               		 {% endfor %}
-	                               		 </tr>
-                                </tbody>
-								</table>
-							</div>
+								<form action="." method="POST">
+	                                {{ form }}
+	                                {% csrf_token %}
+	                                <button class="button fit">Login</button>
+	                            </form>
+	                        </div>
+
 						</div>
 					</div>
 				</section>
@@ -52,3 +49,5 @@
 
 	</body>
 </html>
+
+    

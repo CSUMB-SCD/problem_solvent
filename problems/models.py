@@ -25,6 +25,7 @@ class Problem(models.Model):
     category = models.ForeignKey('Category', on_delete=models.CASCADE, default=None)
     # image
     image = models.CharField(max_length=100)
+    
     def __str__(self):
         return self.title
     def toUrlId(self):

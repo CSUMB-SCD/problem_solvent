@@ -63,7 +63,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'problem_solvent.urls'
-LOGIN_REDIRECT_URL = '/chat'
+LOGIN_REDIRECT_URL = '/'
 
 redis_url = urlparse(os.environ.get('REDIS_URL'))
 redis_host = os.environ.get('REDIS_HOST', 'redis://127.0.0.1:6379/0')

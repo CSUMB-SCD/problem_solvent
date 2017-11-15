@@ -22,21 +22,29 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2>Leaderboard</h2>
+						<h2>Account Page</h2>
 
 					</header>
                     <div class="box">
 						<div class="row">
 							<div class="12u">
-								<table>
-									<tbody>
-										<tr>
-										 {% for user in users %}
-	                                   		<td><a href = "/account/{{user.user.id}}" ><img src = "" alt="image" height="42" width="42"></img></a> Rank: {{ user.rank }} <li>User: <a href = "/account/{{user.user.id}}" >{{ user.user.username }}</a></li> <li>Points: {{ user.points }}</li></td>
-	                               		 {% endfor %}
-	                               		 </tr>
-                                </tbody>
-								</table>
+                                <p>Username: {{ user.username }}<br>Points: {{ profile.points }}<br>Rank: {{ profile.rank }}</p>
+							</div>
+						</div>
+					</div>
+                    <div class="box">
+						<div class="row">
+							<div class="6u 12u(mobile)">
+								<h3>Solutions</h3>
+                                {% for solution in solutions %}
+                                    <p>{{ solution.problem.title }}<br> {{ solution.text}}</p>
+                                {% endfor %}
+							</div>
+							<div class="6u 12u(mobile)">
+								<h3>Comments</h3>
+                                {% for comment in comments %}
+                                <ul><li>{{ comment.problem.title }}</li><ul><li> {{ comment.text}}</li></ul></ul>
+                                {% endfor %}
 							</div>
 						</div>
 					</div>

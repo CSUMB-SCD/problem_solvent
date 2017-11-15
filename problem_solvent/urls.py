@@ -1,5 +1,4 @@
 from django.conf.urls import include, url
-
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
 
@@ -27,14 +26,19 @@ urlpatterns = [
     url(r'^problem/([0-9]{2})/$', problems.views.problem, name='problem'),
     url(r'^problem/([0-9]{3})/$', problems.views.problem, name='problem'),
     url(r'^problem/([0-9]{4})/$', problems.views.problem, name='problem'),
-    url(r'^newproblem/$', problems.views.new_problem, name='new problem'),\
+    
+    url(r'^newproblem/$', problems.views.new_problem, name='new problem'),
 
     url(r'^account/$', account.views.index, name='account'),
+    url(r'^account/([0-9]{1})/$', account.views.public_profile, name='account'),
+    url(r'^account/([0-9]{2})/$', account.views.public_profile, name='public account'),
+    url(r'^account/([0-9]{3})/$', account.views.public_profile, name='public account'),
+    url(r'^account/([0-9]{4})/$', account.views.public_profile, name=' publicaccount'),
 
     url(r'^leaderboard', leaderboard.views.index, name='leaderboard'),
     url(r'^oldchat', chat.views.index, name='oldchat'),
     url(r'^chat', chat_ws.views.index, name='chat'),
-    url(r'^login/$', login),
-    url(r'^logout/$', logout)
-
+    url(r'^login/$', login, name="login"),
+    url(r'^logout/$', logout),
+    url(r'^signup/$', account.views.signup, name='signup')
 ]
