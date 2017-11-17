@@ -4,12 +4,25 @@ jobs:
     working_directory: ~/problem_solvent
     docker:
       - image: circleci/python:3.6.1
-      - image: circleci/postgres:9.6.2
+      - image: circleci/postgres:9.6.2-alpine
         environment:
-          POSTGRES_USER: root
-          POSTGRES_DB: circle_test
+          POSTGRES_USER: postgres
     steps:
       - checkout
+      - run:
+          name: Wait for db
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run:
+          name: Installing Dependencies
+          command: |
+            yarn install
+            sudo apt-get install postgresql-client
+
+      - run:
+          name: Running Test
+          command: |
+            psql -c "create database test" -U postgres -h localhost -p 5432
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
       - run:
