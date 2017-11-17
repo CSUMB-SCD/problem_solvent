@@ -14,12 +14,6 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
 
       - run:
-          name: Installing Dependencies
-          command: |
-            yarn install
-            sudo apt-get install postgresql-client
-
-      - run:
           name: Running Test
           command: |
             psql -c "create database test" -U postgres -h localhost -p 5432
