@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Wait for db
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
-      - run: sudo apt-get install -y postgresql-client
+      - run: sudo apt-get install -y postgresql-client --fix-missing
       - run:
           name: Running Test
           command: |
