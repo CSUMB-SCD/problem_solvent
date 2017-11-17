@@ -9,7 +9,6 @@ class SimpleTest(TestCase):
         self.factory = RequestFactory()
 
     def test_details(self):
-        pass
         # Create an instance of a GET request.
         request = self.factory.get('/')
         request.user = AnonymousUser()
