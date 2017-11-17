@@ -8,7 +8,6 @@ jobs:
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: circle_test
-          DATABASE_URL: postgres://root@localhost/circle_test
     steps:
       - checkout
       - restore_cache:
