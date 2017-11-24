@@ -37,3 +37,4 @@ Twisted==17.9.0
 txaio==2.8.2
 whitenoise==3.3.1
 zope.interface==4.4.3
+Pillow==4.3.0
