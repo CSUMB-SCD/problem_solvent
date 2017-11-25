@@ -92,6 +92,31 @@
 						</div>
 					</div>
 					{% endfor %}
+					<div class="row">
+						<div class="12u">
+							<section class="box">
+								<h3>Post Comment</h3>
+								<form method="post" action="/comment/{{ problem.id }}/"  enctype="multipart/form-data">{% csrf_token %}
+								<div class="row uniform">
+										<div class="12u">
+											<ul class="actions">
+												{{ comment_form }}
+											</ul>
+										</div>
+									</div>
+
+									<div class="row uniform">
+										<div class="12u">
+											<ul class="actions">
+												<li><input type="submit" value="Post Comment" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+								<hr />
+							</section>
+						</div>
+					</div>
 				</section>
 
 			<!-- Footer -->

@@ -26,6 +26,14 @@ class SolutionForm(forms.ModelForm):
         labels = {
             "text": "Solution Description"
         }
+        
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('text',)
+        labels = {
+            "text": "Comment"
+        }
 
 # Create your views here.
 def index(request, page=1):
@@ -58,7 +66,9 @@ def problem(request, id):
             comments = Comment.objects.filter(problem=problem)
             solutions = Solution.objects.filter(problem=problem)
             sol_form = SolutionForm()
-            return render(request, 'problem.html', {"problem":problem, "comments": comments, "solutions": solutions, "solution_form": sol_form})
+            comment_form = CommentForm()
+            return render(request, 'problem.html', 
+            {"problem":problem, "comments": comments, "solutions": solutions, "solution_form": sol_form, "comment_form":comment_form})
     return redirect('problems')
 
 
@@ -73,6 +83,19 @@ def solution(request, problem_id):
             solution.problem = Problem.objects.get(id=problem_id)
             solution.date = timezone.now()
             solution.save()
+    return redirect('/problem/' + str(problem_id))
+    
+@login_required(login_url="/login")
+def comment(request, problem_id):
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.owner = request.user
+            comment.likes = 0
+            comment.problem = Problem.objects.get(id=problem_id)
+            comment.date = timezone.now()
+            comment.save()
     return redirect('/problem/' + str(problem_id))
 
 @login_required(login_url="/login")
