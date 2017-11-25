@@ -30,8 +30,16 @@ def signup(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
+            profile = Profile()
+            profile.user = user
+            profile.points = 0
+            profile.rank = -1
+            profile.save()
+            Profile.objects.rank_profiles()
             login(request, user)
-            return redirect('home')
+            return redirect('/')
+        else:
+            print(form.errors)
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})

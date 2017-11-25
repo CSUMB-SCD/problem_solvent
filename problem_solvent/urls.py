@@ -21,19 +21,18 @@ urlpatterns = [
     url(r'^db', pages.views.db, name='db'),
 
     url(r'^admin/', include(admin.site.urls)),
+    
     url(r'^problems/$', problems.views.index, name='problems'),
-    url(r'^problem/([0-9]{1})/$', problems.views.problem, name='problem'),
-    url(r'^problem/([0-9]{2})/$', problems.views.problem, name='problem'),
-    url(r'^problem/([0-9]{3})/$', problems.views.problem, name='problem'),
-    url(r'^problem/([0-9]{4})/$', problems.views.problem, name='problem'),
+    url(r'^problems/([0-9]{1,})/$', problems.views.index, name='problems'),
+    
+    url(r'^problem/([0-9]{1,})/$', problems.views.problem, name='problem'),
+    url(r'^solution/([0-9]{1,})/$', problems.views.solution, name='solution post'),
+
     
     url(r'^newproblem/$', problems.views.new_problem, name='new problem'),
 
     url(r'^account/$', account.views.index, name='account'),
-    url(r'^account/([0-9]{1})/$', account.views.public_profile, name='account'),
-    url(r'^account/([0-9]{2})/$', account.views.public_profile, name='public account'),
-    url(r'^account/([0-9]{3})/$', account.views.public_profile, name='public account'),
-    url(r'^account/([0-9]{4})/$', account.views.public_profile, name=' publicaccount'),
+    url(r'^account/([0-9]{1,})/$', account.views.public_profile, name='account'),
 
     url(r'^leaderboard', leaderboard.views.index, name='leaderboard'),
     url(r'^oldchat', chat.views.index, name='oldchat'),

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Problem, Comment
+from .models import Problem, Comment, Solution
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.template import RequestContext
@@ -15,14 +15,25 @@ class ProblemForm(forms.ModelForm):
     class Meta:
         model = Problem
         fields = ('title', 'description', 'long_description', 'category', 'points', 'image')
+        
+class SolutionForm(forms.ModelForm):
+    class Meta:
+        model = Solution
+        fields = ('text',)
+        widgets = {
+            'text': forms.Textarea(attrs={'cols': 10, 'rows': 5}),
+        }
+        labels = {
+            "text": "Solution Description"
+        }
 
 # Create your views here.
 def index(request, page=1):
-    posts_per_page = 1
+    posts_per_page = 3
     page = int(page) - 1
     start = page*posts_per_page
     end = start + posts_per_page
-    problems = Problem.objects.all()
+    problems = Problem.objects.filter(isSolved=False)
     if start >= len(problems):
         return redirect('problems')
     if end > len(problems):
@@ -45,11 +56,24 @@ def problem(request, id):
         problem = Problem.objects.get(id=id)
         if problem:
             comments = Comment.objects.filter(problem=problem)
-
-            return render(request, 'problem.html', {"problem":problem, "comments": comments})
+            solutions = Solution.objects.filter(problem=problem)
+            sol_form = SolutionForm()
+            return render(request, 'problem.html', {"problem":problem, "comments": comments, "solutions": solutions, "solution_form": sol_form})
     return redirect('problems')
 
 
+@login_required(login_url="/login")
+def solution(request, problem_id):
+    if request.method == 'POST':
+        form = SolutionForm(request.POST)
+        if form.is_valid():
+            solution = form.save(commit=False)
+            solution.owner = request.user
+            solution.likes = 0
+            solution.problem = Problem.objects.get(id=problem_id)
+            solution.date = timezone.now()
+            solution.save()
+    return redirect('/problem/' + str(problem_id))
 
 @login_required(login_url="/login")
 def new_problem(request):
@@ -60,14 +84,11 @@ def new_problem(request):
             problem.owner = request.user
             problem.created = timezone.now()
             problem.save()
+            return redirect('/problem/' + str(problem.id))
         else:
-            print('Form not valid.')
             print(form.errors)
-        return redirect('problems')
+            return render(request, 'new_problem.html', {'form': form})
     else:
         form = ProblemForm()
         return render(request, 'new_problem.html', {'form': form})
     
-@login_required(login_url="/login")
-def submit_problem(request):
-    return render(request, 'problems.html')

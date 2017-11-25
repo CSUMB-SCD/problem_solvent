@@ -25,21 +25,48 @@
 						<h2>Leaderboard</h2>
 
 					</header>
-                    <div class="box">
-						<div class="row">
-							<div class="12u">
-								<table>
-									<tbody>
-										<tr>
-										 {% for user in users %}
-	                                   		<td><a href = "/account/{{user.user.id}}" ><img src = "" alt="image" height="42" width="42"></img></a> Rank: {{ user.rank }} <li>User: <a href = "/account/{{user.user.id}}" >{{ user.user.username }}</a></li> <li>Points: {{ user.points }}</li></td>
-	                               		 {% endfor %}
-	                               		 </tr>
-                                </tbody>
-								</table>
-							</div>
+					<div class="row">
+						<div class="12u">
+
+							<!-- Table -->
+								<section class="box">
+									<!--<h3>Leaderboard</h3>-->
+
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Rank</th>
+													<th>Username</th>
+													<th>Organization</th>
+													<th>Points</th>
+													
+												</tr>
+											</thead>
+											<tbody>
+												{% for user in users %}
+												<tr>
+													<td>{{ user.rank }}</td>
+													<td><a href = "/account/{{user.user.id}}" >{{ user.user.username }}</a></td>
+													<td>CSUMB</td>
+													<td>{{ user.points }}</td>
+												</tr>
+												 {% endfor %}
+												
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td></td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
 						</div>
 					</div>
+
 				</section>
 
 			<!-- Footer -->

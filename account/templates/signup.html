@@ -1,17 +1,70 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 	<head>
-		<title>Account</title>
+		<title>Sign Up</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="/static/assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="/static/assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie8.css" /><![endif]-->
 	</head>
-{% block content %}
-	{% include "nav.html" %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
-{% endblock %}
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			{% include "nav.html" %}
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Create a New Account</h2>
+						<p>Your first step to changing the world!</p>
+					</header>
+				<div class="row">
+						<div class="12u">
+
+							<section class="box">
+									<h3>Account Information</h3>
+									<form method="post" action="/signup/"  enctype="multipart/form-data">{% csrf_token %}
+									<div class="row uniform">
+											<div class="12u">
+												<ul class="actions">
+													{{ form }}
+												</ul>
+											</div>
+										</div>
+
+										<div class="row uniform">
+											<div class="12u">
+												<ul class="actions">
+													<li><input type="submit" value="Create Account" /></li>
+													<li><input type="reset" value="Reset" class="alt" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+									<hr />
+								</section>
+
+						</div>
+					</div>
+
+
+
+				</section>
+
+			<!-- Footer -->
+			{% include "footer.html" %}
+
+		</div>
+
+		<!-- scripts -->
+	{% include "scripts.html" %}
+
+	</body>
+</html>

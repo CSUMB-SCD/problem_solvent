@@ -39,6 +39,45 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="12u">
+							<section class="box">
+								<h3>Submit Your Solution</h3>
+								<form method="post" action="/solution/{{ problem.id }}/"  enctype="multipart/form-data">{% csrf_token %}
+								<div class="row uniform">
+										<div class="12u">
+											<ul class="actions">
+												{{ solution_form }}
+											</ul>
+										</div>
+									</div>
+
+									<div class="row uniform">
+										<div class="12u">
+											<ul class="actions">
+												<li><input type="submit" value="Submit Solution" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+								<hr />
+							</section>
+						</div>
+					</div>
+					<header>
+						<h2>Solutions</h2>
+					</header>
+					{% for solution in solutions %}
+					<div class="box">
+						<div class="row">
+							<div class="12u">
+								<h3>{{ solution.owner.username }}</h3>
+								<p>{{ solution.text }}
+								</p>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
 					<header>
 						<h2>Comments</h2>
 					</header>
