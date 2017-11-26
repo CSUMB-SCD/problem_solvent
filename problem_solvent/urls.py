@@ -28,6 +28,11 @@ urlpatterns = [
     url(r'^problem/([0-9]{1,})/$', problems.views.problem, name='problem'),
     url(r'^solution/([0-9]{1,})/$', problems.views.solution, name='solution post'),
     url(r'^comment/([0-9]{1,})/$', problems.views.comment, name='comment post'),
+    
+    url(r'^delcomment/([0-9]{1,})/$', problems.views.delete_comment, name='comment delete'),
+    url(r'^delsolution/([0-9]{1,})/$', problems.views.delete_solution, name='solution delete'),
+    url(r'^selectsolution/([0-9]{1,})/$', problems.views.select_solution, name='solution select'),
+    url(r'^deselectsolution/([0-9]{1,})/$', problems.views.deselect_solution, name='solution select'),
 
     
     url(r'^newproblem/$', problems.views.new_problem, name='new problem'),

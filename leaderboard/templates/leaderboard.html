@@ -27,10 +27,10 @@
 					</header>
 					<div class="row">
 						<div class="12u">
-
+							
 							<!-- Table -->
 								<section class="box">
-									<!--<h3>Leaderboard</h3>-->
+								<h3>Individuals</h3>
 
 									<div class="table-wrapper">
 										<table>
@@ -48,8 +48,37 @@
 												<tr>
 													<td>{{ user.rank }}</td>
 													<td><a href = "/account/{{user.user.id}}" >{{ user.user.username }}</a></td>
-													<td>CSUMB</td>
+													<td>{{ user.organization.name }}</td>
 													<td>{{ user.points }}</td>
+												</tr>
+												 {% endfor %}
+												
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td></td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+									<h3>Organizations</h3>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Rank</th>
+													<th>Name</th>
+													<th>Points</th>
+													
+												</tr>
+											</thead>
+											<tbody>
+												{% for org in orgs %}
+												<tr>
+													<td>{{ org.rank }}</td>
+													<td>{{ org.name }}</td>
+													<td>{{ org.points }}</td>
 												</tr>
 												 {% endfor %}
 												

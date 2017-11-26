@@ -74,6 +74,24 @@
 								<h3>{{ solution.owner.username }}</h3>
 								<p>{{ solution.text }}
 								</p>
+								{% if solution.isChosen %}
+								<p>Chosen solution!</p>
+								{% endif %}
+								
+								{% if problem.owner.id == user.id and not solution.isChosen and not problem.isSolved %}
+								<a href="/selectsolution/{{ solution.id }}">Select Solution</a>
+								{% endif %}
+								
+								{% if problem.owner.id == user.id and solution.isChosen %}
+								<a href="/deselectsolution/{{ solution.id }}">Deselect Solution</a>
+								{% endif %}
+								
+								{% if solution.owner.id == user.id or solution.problem.owner.id == user.id %}
+									{% if not solution.isChosen %}
+										<a href="/delsolution/{{ solution.id }}">Delete</a>
+									{% endif %}
+								{% endif %}
+								
 							</div>
 						</div>
 					</div>
@@ -88,6 +106,10 @@
 								<h3>{{ comment.owner.username }}</h3>
 								<p>{{ comment.text }}
 								</p>
+								{% if comment.owner.id == user.id or comment.problem.owner.id == user.id %}
+								<a href="/delcomment/{{ comment.id }}">Delete</a>
+								{% endif %}
+								
 							</div>
 						</div>
 					</div>

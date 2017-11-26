@@ -25,26 +25,102 @@
 						<h2>Account Page</h2>
 
 					</header>
-                    <div class="box">
-						<div class="row">
-							<div class="12u">
-                                <p>Username: {{ user.username }}<br>Points: {{ profile.points }}<br>Rank: {{ profile.rank }}</p>
-							</div>
+					<div class="row">
+						<div class="12u">
+
+							<!-- Table -->
+								<section class="box">
+									<h3>Account Information</h3>
+
+									<h4>{{ user.username }}</h4>
+									<div class="table-wrapper">
+										<table>
+											<tbody>
+												<tr>
+													<td>Email</td>
+													<td>{{ user.email }}</td>
+												</tr>
+												<tr>
+													<td>Organization</td>
+													<td>{{ profile.organization.name }}</td>
+												</tr>
+												<tr>
+													<td>Points</td>
+													<td> {{ profile.points }} </td>
+												</tr>
+												<tr>
+													<td>Solutions Proposed</td>
+													<td>{{ num_prop_solutions }}</td>
+												</tr>
+												<tr>
+													<td>Solutions Accepted</td>
+													<td>{{ num_acc_solutions }}</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+								</section>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="12u">
+
+							<!-- Table -->
+								<section class="box">
+									<h3>Solutions</h3>
+									{% if num_prop_solutions is 0 %}
+										<h3>No Solutions Proposed</h3>
+									{% else %}
+									<h4>{{ user.username }}</h4>
+									<div class="table-wrapper">
+										<table>
+											<tbody>
+												<thead>
+												<tr>
+													<th>Problem</th>
+													<th>Solution Description</th>
+													<th>Chosen</th>
+													<th>Points</th>
+												</tr>
+												</thead>
+
+												{% for solution in solutions %}
+												<tr>
+													<td><a href="/problem/{{solution.problem.id}}/">{{ solution.problem.title }}</a></td>
+													<td>{{ solution.text }}</td>
+													{% if solution.isChosen %}
+													<td>Chosen</td>
+													{% else %}
+													<td>Not Chosen</td>
+													{% endif %}
+													<td>{{ solution.problem.points }}</td>
+												</tr>
+												{% endfor %}
+												
+											</tbody>
+										</table>
+									</div>
+									{% endif %}
+								</section>
+
 						</div>
 					</div>
                     <div class="box">
 						<div class="row">
-							<div class="6u 12u(mobile)">
-								<h3>Solutions</h3>
-                                {% for solution in solutions %}
-                                    <p>{{ solution.problem.title }}<br> {{ solution.text}}</p>
-                                {% endfor %}
-							</div>
-							<div class="6u 12u(mobile)">
+							<div class="12u">
 								<h3>Comments</h3>
-                                {% for comment in comments %}
-                                <ul><li>{{ comment.problem.title }}</li><ul><li> {{ comment.text}}</li></ul></ul>
-                                {% endfor %}
+								<hr>
+								<ul class="alt">
+									{% for comment in comments %}
+                                	<li><a href="/problem/{{ comment.problem.id }}/">{{ comment.problem.title }}</a>: {{ comment.text }}</li>
+                                	{% endfor %}
+                                	<hr>
+								
+								</ul>
+
+                                
 							</div>
 						</div>
 					</div>

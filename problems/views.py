@@ -9,6 +9,7 @@ from django.utils import timezone
 
 from django import forms
 from .models import Problem
+from account.models import Profile
 
 class ProblemForm(forms.ModelForm):
 
@@ -64,7 +65,7 @@ def problem(request, id):
         problem = Problem.objects.get(id=id)
         if problem:
             comments = Comment.objects.filter(problem=problem)
-            solutions = Solution.objects.filter(problem=problem)
+            solutions = Solution.objects.filter(problem=problem).order_by("-isChosen")
             sol_form = SolutionForm()
             comment_form = CommentForm()
             return render(request, 'problem.html', 
@@ -96,6 +97,50 @@ def comment(request, problem_id):
             comment.problem = Problem.objects.get(id=problem_id)
             comment.date = timezone.now()
             comment.save()
+    return redirect('/problem/' + str(problem_id))
+    
+@login_required(login_url="/login")
+def delete_comment(request, comment_id):
+    comment = Comment.objects.get(id=comment_id)
+    problem_id = comment.problem.id
+    if comment.owner.id == request.user.id or comment.problem.owner.id == request.user.id:
+        comment.delete()
+    return redirect('/problem/' + str(problem_id))
+    
+@login_required(login_url="/login")
+def delete_solution(request, solution_id):
+    solution = Solution.objects.get(id=solution_id)
+    problem_id = solution.problem.id
+    if (solution.owner.id == request.user.id or solution.problem.owner.id == request.user.id) and not solution.isChosen:
+        solution.delete()
+    return redirect('/problem/' + str(problem_id))
+    
+@login_required(login_url="/login")
+def select_solution(request, solution_id):
+    solution = Solution.objects.get(id=solution_id)
+    problem_id = solution.problem.id
+    if solution.problem.owner.id == request.user.id and not solution.problem.isSolved:
+        solution.isChosen = True
+        solution.problem.isSolved = True
+        solution.problem.save()
+        profile = Profile.objects.get(user=request.user)
+        profile.points += solution.problem.points
+        profile.save()
+        solution.save()
+    return redirect('/problem/' + str(problem_id))
+    
+@login_required(login_url="/login")
+def deselect_solution(request, solution_id):
+    solution = Solution.objects.get(id=solution_id)
+    problem_id = solution.problem.id
+    if solution.problem.owner.id == request.user.id:
+        solution.problem.isSolved = False
+        solution.problem.save()
+        solution.isChosen = False
+        solution.save()
+        profile = Profile.objects.get(user=request.user)
+        profile.points -= solution.problem.points
+        profile.save()
     return redirect('/problem/' + str(problem_id))
 
 @login_required(login_url="/login")
