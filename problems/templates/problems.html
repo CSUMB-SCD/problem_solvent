@@ -23,7 +23,19 @@
 				<section id="main" class="container">
 					<header>
 						<h2>Problem Feed</h2>
-						<p>List of current unsolved community problems.</p>
+						<p>List of  
+						{% if solved %}
+						solved
+						{% else %}
+						current unsolved
+						{% endif %}
+						 community problems.</p>
+						 {% if not solved %}
+						<a href="/problems/solved/">View Solved</a>
+						{% else %}
+						<a href="/problems/">View Unsolved</a>
+						{% endif %}
+						 
 					</header>
 					{% for problem in problems %}
 					<div class="box">

@@ -37,12 +37,12 @@ class CommentForm(forms.ModelForm):
         }
 
 # Create your views here.
-def index(request, page=1):
+def index(request, page=1, solved=False):
     posts_per_page = 10
     page = int(page) - 1
     start = page*posts_per_page
     end = start + posts_per_page
-    problems = Problem.objects.filter(isSolved=False)
+    problems = Problem.objects.filter(isSolved=solved)
     if start >= len(problems):
         return redirect('problems')
     if end > len(problems):
@@ -58,7 +58,7 @@ def index(request, page=1):
     else:
         prev_page = False
         
-    return render(request, 'problems.html', {'problems': problems_subset, 'next_page': next_page, 'prev_page': prev_page})
+    return render(request, 'problems.html', {'problems': problems_subset, 'page': (page+1), 'next_page': next_page, 'prev_page': prev_page, 'solved': solved})
     
 def problem(request, id):
     if id != None:
@@ -72,6 +72,7 @@ def problem(request, id):
             {"problem":problem, "comments": comments, "solutions": solutions, "solution_form": sol_form, "comment_form":comment_form})
     return redirect('problems')
 
+@login_required(login_url="/login")
 def edit_problem(request, id):
     if id != None:
         problem = Problem.objects.get(id=id)
@@ -88,8 +89,21 @@ def edit_problem(request, id):
         elif problem:
             problem_form = ProblemForm(instance=problem)
             return render(request, 'problem_form.html', {'form': problem_form, 'problem': problem, 'edit': True})
-    return redirect('problems')
-
+    return redirect('/problems/')
+    
+@login_required(login_url="/login")
+def delete_problem(request, id):
+    if id != None:
+        problem = Problem.objects.get(id=id)
+        if problem.owner == request.user:
+            Solution.objects.filter(problem=problem).delete()
+            Comment.objects.filter(problem=problem).delete()
+            problem.delete()
+            Profile.objects.recalculate_points()
+            return redirect('/problems/')
+        else:
+            return redirect('/problem/' + str(id) + '/')
+    return redirect('/problems/')
 
 @login_required(login_url="/login")
 def solution(request, problem_id):
@@ -102,7 +116,7 @@ def solution(request, problem_id):
             solution.problem = Problem.objects.get(id=problem_id)
             solution.date = timezone.now()
             solution.save()
-    return redirect('/problem/' + str(problem_id))
+    return redirect('/problem/' + str(problem_id) + '/')
     
 @login_required(login_url="/login")
 def comment(request, problem_id):
@@ -115,7 +129,7 @@ def comment(request, problem_id):
             comment.problem = Problem.objects.get(id=problem_id)
             comment.date = timezone.now()
             comment.save()
-    return redirect('/problem/' + str(problem_id))
+    return redirect('/problem/' + str(problem_id) + '/')
     
 @login_required(login_url="/login")
 def delete_comment(request, comment_id):
@@ -123,7 +137,7 @@ def delete_comment(request, comment_id):
     problem_id = comment.problem.id
     if comment.owner.id == request.user.id or comment.problem.owner.id == request.user.id:
         comment.delete()
-    return redirect('/problem/' + str(problem_id))
+    return redirect('/problem/' + str(problem_id) + '/')
     
 @login_required(login_url="/login")
 def delete_solution(request, solution_id):
@@ -131,7 +145,7 @@ def delete_solution(request, solution_id):
     problem_id = solution.problem.id
     if (solution.owner.id == request.user.id or solution.problem.owner.id == request.user.id) and not solution.isChosen:
         solution.delete()
-    return redirect('/problem/' + str(problem_id))
+    return redirect('/problem/' + str(problem_id) + '/')
     
 @login_required(login_url="/login")
 def select_solution(request, solution_id):
@@ -141,7 +155,7 @@ def select_solution(request, solution_id):
         solution.isChosen = True
         solution.problem.isSolved = True
         solution.problem.save()
-        profile = Profile.objects.get(user=request.user)
+        profile = Profile.objects.get(user=solution.owner)
         profile.points += solution.problem.points
         profile.save()
         solution.save()
@@ -156,10 +170,10 @@ def deselect_solution(request, solution_id):
         solution.problem.save()
         solution.isChosen = False
         solution.save()
-        profile = Profile.objects.get(user=request.user)
+        profile = Profile.objects.get(user=solution.owner)
         profile.points -= solution.problem.points
         profile.save()
-    return redirect('/problem/' + str(problem_id))
+    return redirect('/problem/' + str(problem_id) + '/')
 
 @login_required(login_url="/login")
 def new_problem(request):

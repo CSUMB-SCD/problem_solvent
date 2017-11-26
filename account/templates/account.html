@@ -31,14 +31,21 @@
 							<!-- Table -->
 								<section class="box">
 									<h3>Account Information</h3>
-
-									<h4>{{ user.username }}</h4>
+									
+									<h4>{{ profile.user.username }}</h4>
+									{% if profile.image %}
+									<img style="width:100px;" src="{{ profile.image.url }}">
+									{% else %}
+									<h5>No avatar</h5>
+									<img style="width:100px;" src="/media/_uploads/avatar.jpg">
+									
+									{% endif %}
 									<div class="table-wrapper">
 										<table>
 											<tbody>
 												<tr>
 													<td>Email</td>
-													<td>{{ user.email }}</td>
+													<td>{{ profile.user.email }}</td>
 												</tr>
 												<tr>
 													<td>Organization</td>
@@ -59,6 +66,12 @@
 												
 											</tbody>
 										</table>
+									{% if user.is_authenticated %}
+										{% if user.id == profile.user.id %}
+											<a href="/editaccount/">Edit Account</a>
+											<a href="/changepassword/">Change Password</a>
+										{% endif %}
+									{% endif %}
 									</div>
 								</section>
 
@@ -73,7 +86,7 @@
 									{% if num_prop_solutions is 0 %}
 										<h3>No Solutions Proposed</h3>
 									{% else %}
-									<!--<h4>{{ user.username }}</h4>-->
+									<!--<h4>{{ profile.user.username }}</h4>-->
 									<div class="table-wrapper">
 										<table>
 											<tbody>
@@ -114,7 +127,7 @@
 							<!-- Table -->
 								<section class="box">
 									<h3>Posted Problems</h3>
-									<!--<h4>{{ user.username }}</h4>-->
+									<!--<h4>{{ profile.user.username }}</h4>-->
 									<div class="table-wrapper">
 										<table>
 											<tbody>

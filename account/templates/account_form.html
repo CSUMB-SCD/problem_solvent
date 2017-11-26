@@ -6,7 +6,11 @@
 -->
 <html>
 	<head>
+		{% if user.is_authenticated %}
+		<title>Edit Account</title>
+		{% else %}
 		<title>Sign Up</title>
+		{% endif %}
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="/static/assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -22,15 +26,28 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
+						{% if user.is_authenticated %}
+						<h2>Edit Account Info</h2>
+						{% else %}
 						<h2>Create a New Account</h2>
 						<p>Your first step to changing the world!</p>
+						{% endif %}
+						
+						
 					</header>
 				<div class="row">
 						<div class="12u">
 
 							<section class="box">
 									<h3>Account Information</h3>
+									{% if user.is_authenticated and not password %}
+									<form method="post" action="/editaccount/"  enctype="multipart/form-data">{% csrf_token %}
+									{% elif password %}
+									<form method="post" action="/changepassword/">{% csrf_token %}
+									{% else %}
 									<form method="post" action="/signup/"  enctype="multipart/form-data">{% csrf_token %}
+									{% endif %}
+									
 									<div class="row uniform">
 											<div class="12u">
 												<ul class="actions">
@@ -42,8 +59,13 @@
 										<div class="row uniform">
 											<div class="12u">
 												<ul class="actions">
+													{% if user.is_authenticated %}
+													<li><input type="submit" value="Submit Changes" /></li>
+													<li><input type="reset" value="Reset" class="alt" /></li>
+													{% else %}
 													<li><input type="submit" value="Create Account" /></li>
 													<li><input type="reset" value="Reset" class="alt" /></li>
+													{% endif %}
 												</ul>
 											</div>
 										</div>

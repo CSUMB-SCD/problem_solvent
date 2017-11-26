@@ -38,18 +38,26 @@
 												<tr>
 													<th>Rank</th>
 													<th>Username</th>
+													<th>Avatar</th>
 													<th>Organization</th>
 													<th>Points</th>
 													
 												</tr>
 											</thead>
 											<tbody>
-												{% for user in users %}
+												{% for profile in users %}
 												<tr>
-													<td>{{ user.rank }}</td>
-													<td><a href = "/account/{{user.user.id}}" >{{ user.user.username }}</a></td>
-													<td>{{ user.organization.name }}</td>
-													<td>{{ user.points }}</td>
+													<td>{{ profile.rank }}</td>
+													<td><a href = "/account/{{profile.user.username}}" >{{ profile.user.username }}</a></td>
+													{% if profile.image %}
+													<td><img style="max-width:50px;max-height:50px;" src="{{ profile.image.url }}"></td>
+													
+													{% else %}
+													<td><img style="max-width:50px;max-height:50px;" src="/media/_uploads/avatar.jpg"></td>
+													{% endif %}
+													
+													<td>{{ profile.organization.name }}</td>
+													<td>{{ profile.points }}</td>
 												</tr>
 												 {% endfor %}
 												

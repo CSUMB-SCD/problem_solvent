@@ -26,6 +26,9 @@ urlpatterns = [
     url(r'^problems/$', problems.views.index, name='problems'),
     url(r'^problems/([0-9]{1,})/$', problems.views.index, name='problems'),
     
+    url(r'^problems/solved/$', problems.views.index, {'solved' : True}, name='problems'),
+    url(r'^problems/solved/([0-9]{1,})/$', problems.views.index, {'solved' : True}, name='problems'),
+    
     url(r'^problem/([0-9]{1,})/$', problems.views.problem, name='problem'),
     url(r'^solution/([0-9]{1,})/$', problems.views.solution, name='solution post'),
     url(r'^comment/([0-9]{1,})/$', problems.views.comment, name='comment post'),
@@ -38,9 +41,19 @@ urlpatterns = [
     
     url(r'^newproblem/$', problems.views.new_problem, name='new problem'),
     url(r'^editproblem/([0-9]{1,})/$', problems.views.edit_problem, name='edit problem'),
+    url(r'^delproblem/([0-9]{1,})/$', problems.views.delete_problem, name='delete problem'),
 
     url(r'^account/$', account.views.index, name='account'),
-    url(r'^account/([0-9]{1,})/$', account.views.public_profile, name='account'),
+    url(r'^editaccount/$', account.views.edit_account, name='edit account'),
+    url(r'^changepassword/$', account.views.change_password, name='change password'),
+    
+    url(r'^account/([0-9]{1,})/$', account.views.index, name='account'),
+    # with slash
+    url(r'^account/(?P<username>.*)/$', account.views.index, name='account'),
+    # without slash
+    url(r'^account/(?P<username>.*)$', account.views.index, name='account'),
+    
+    
 
     url(r'^leaderboard', leaderboard.views.index, name='leaderboard'),
     url(r'^oldchat', chat.views.index, name='oldchat'),

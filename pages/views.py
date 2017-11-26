@@ -5,7 +5,11 @@ from .models import Greeting
 
 # Create your views here.
 def index(request):
-    return render(request, 'index_new.html', {"home": True})
+    if request.user.is_authenticated():
+        logged_in = True
+    else:
+        logged_in = False
+    return render(request, 'index.html', {"home": True})
     
 def problems(request):
     return render(request, 'problems.html')

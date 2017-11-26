@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from problems.models import Problem
 
 class Organization(models.Model):
     # id (auto created)
@@ -40,7 +40,22 @@ class ProfileManager(models.Manager):
             lastPoints = org.points
             org.rank = rank
             org.save()
+    def recalculate_points(self):
+        problems = Problem.objects.filter(isSolved=True)
+        profiles = Profile.objects.all()
+        for profile in profiles:
+            profile.points = 0
+            profile.rank = 0
+            profile.save()
             
+        for problem in problems:
+            try:
+                solution = Solution.objects.get(problem=problem, isChosen=True)
+                profile = Profile.objects.get(user=solution.owner)
+                profile.points += problem.points
+            except Exception as e:
+                pass
+        self.rank_profiles()
             
 # Create your models here.
 class Profile(models.Model):
@@ -53,6 +68,7 @@ class Profile(models.Model):
     rank = models.IntegerField()
     org_rank = models.IntegerField()
     organization = models.ForeignKey('Organization', on_delete=models.SET_NULL, null=True, blank=True)
+    image = models.ImageField(upload_to = 'media/_uploads/', blank=True)
     objects = ProfileManager()
     def __str__(self):
         return self.user.username

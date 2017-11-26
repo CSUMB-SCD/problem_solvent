@@ -4,8 +4,10 @@
 						<ul>
                             <li><a href="/">Home</a></li>
 							<li><a href="/problems">Problems</a></li>
+							{% if user.is_authenticated %}
 							<li><a href="/newproblem">Post New Problem</a></li>
 							<li><a href="/account">Account</a>
+							{% endif %}
 								<!--<ul>-->
 								<!--	<li><a href="#">Profile</a></li>-->
 								<!--	<li><a href="#">Log out</a></li>-->
