@@ -28,14 +28,19 @@
 					<div class="box">
 						<div class="row">
 							<div class="6u 12u(mobile)">
-								<img style="width:100%;max-height:400px;" src="{{ problem.image }}" alt="" />
+								<img style="width:100%;max-height:400px;" src="{{ problem.image.url }}" alt="" />
 							</div>
 							<div class="6u 12u(mobile)">
 								<h3>{{ problem.title }}</h3>
 								<h4>Author: {{ problem.owner.username }}</h4>
+								<h4>Category: {{ problem.category.name }}</h4>
 								<h4>{{ problem.points }} Points</h4>
 								<p>{{ problem.description }}
 								</p>
+								{% if problem.owner == user %}
+								<a href='/editproblem/{{ problem.id }}/'>Edit Problem</a>
+								<a href='/deleteproblem/{{ problem.id }}/'>Delete Problem</a>
+								{% endif %}
 							</div>
 						</div>
 					</div>

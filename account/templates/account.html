@@ -73,7 +73,7 @@
 									{% if num_prop_solutions is 0 %}
 										<h3>No Solutions Proposed</h3>
 									{% else %}
-									<h4>{{ user.username }}</h4>
+									<!--<h4>{{ user.username }}</h4>-->
 									<div class="table-wrapper">
 										<table>
 											<tbody>
@@ -107,6 +107,47 @@
 
 						</div>
 					</div>
+					{% if problems %}
+					<div class="row">
+						<div class="12u">
+
+							<!-- Table -->
+								<section class="box">
+									<h3>Posted Problems</h3>
+									<!--<h4>{{ user.username }}</h4>-->
+									<div class="table-wrapper">
+										<table>
+											<tbody>
+												<thead>
+												<tr>
+													<th>Title</th>
+													<th>Description</th>
+													<th>Solved</th>
+													<th>Points</th>
+												</tr>
+												</thead>
+
+												{% for problem in problems %}
+												<tr>
+													<td><a href="/problem/{{problem.id}}/">{{ problem.title }}</a></td>
+													<td>{{ problem.description }}</td>
+													{% if problem.isSolved %}
+													<td>Solved</td>
+													{% else %}
+													<td>Not Solved</td>
+													{% endif %}
+													<td>{{ problem.points }}</td>
+												</tr>
+												{% endfor %}
+												
+											</tbody>
+										</table>
+									</div>
+								</section>
+						</div>
+					</div>
+					{% endif %}
+					{% if comments %}
                     <div class="box">
 						<div class="row">
 							<div class="12u">
@@ -119,11 +160,10 @@
                                 	<hr>
 								
 								</ul>
-
-                                
 							</div>
 						</div>
 					</div>
+					{% endif %}
 				</section>
 
 			<!-- Footer -->

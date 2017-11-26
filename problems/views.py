@@ -12,7 +12,7 @@ from .models import Problem
 from account.models import Profile
 
 class ProblemForm(forms.ModelForm):
-
+    image = forms.ImageField(required=False)
     class Meta:
         model = Problem
         fields = ('title', 'description', 'long_description', 'category', 'points', 'image')
@@ -38,7 +38,7 @@ class CommentForm(forms.ModelForm):
 
 # Create your views here.
 def index(request, page=1):
-    posts_per_page = 3
+    posts_per_page = 10
     page = int(page) - 1
     start = page*posts_per_page
     end = start + posts_per_page
@@ -70,6 +70,24 @@ def problem(request, id):
             comment_form = CommentForm()
             return render(request, 'problem.html', 
             {"problem":problem, "comments": comments, "solutions": solutions, "solution_form": sol_form, "comment_form":comment_form})
+    return redirect('problems')
+
+def edit_problem(request, id):
+    if id != None:
+        problem = Problem.objects.get(id=id)
+        if problem.owner != request.user:
+            return redirect('/problem/' + str(problem.id) + '/')
+        if request.method == 'POST':
+            form = ProblemForm(request.POST, request.FILES, instance=problem)
+            if form.is_valid():
+                problem = form.save(commit=False)
+                problem.save()
+            else:
+                print(form.errors)
+            return redirect('/problem/' + str(problem.id) + '/')
+        elif problem:
+            problem_form = ProblemForm(instance=problem)
+            return render(request, 'problem_form.html', {'form': problem_form, 'problem': problem, 'edit': True})
     return redirect('problems')
 
 
@@ -127,7 +145,7 @@ def select_solution(request, solution_id):
         profile.points += solution.problem.points
         profile.save()
         solution.save()
-    return redirect('/problem/' + str(problem_id))
+    return redirect('/problem/' + str(problem_id) + '/')
     
 @login_required(login_url="/login")
 def deselect_solution(request, solution_id):
@@ -152,11 +170,11 @@ def new_problem(request):
             problem.owner = request.user
             problem.created = timezone.now()
             problem.save()
-            return redirect('/problem/' + str(problem.id))
+            return redirect('/problem/' + str(problem.id) + '/')
         else:
             print(form.errors)
-            return render(request, 'new_problem.html', {'form': form})
+            return render(request, 'problem_form.html', {'form': form})
     else:
         form = ProblemForm()
-        return render(request, 'new_problem.html', {'form': form})
+        return render(request, 'problem_form.html', {'form': form})
     

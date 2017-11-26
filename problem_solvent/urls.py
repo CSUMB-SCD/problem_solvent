@@ -1,7 +1,8 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
-
+from django.conf.urls.static import static
+from django.conf import settings
 admin.autodiscover()
 
 import pages.views
@@ -36,6 +37,7 @@ urlpatterns = [
 
     
     url(r'^newproblem/$', problems.views.new_problem, name='new problem'),
+    url(r'^editproblem/([0-9]{1,})/$', problems.views.edit_problem, name='edit problem'),
 
     url(r'^account/$', account.views.index, name='account'),
     url(r'^account/([0-9]{1,})/$', account.views.public_profile, name='account'),
@@ -47,3 +49,5 @@ urlpatterns = [
     url(r'^logout/$', logout),
     url(r'^signup/$', account.views.signup, name='signup')
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

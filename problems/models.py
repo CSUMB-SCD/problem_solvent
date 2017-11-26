@@ -24,7 +24,7 @@ class Problem(models.Model):
     # category int relating to another table, (engineering, business, software, etc.)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, default=None)
     # image
-    image = models.ImageField(upload_to = '_uploads/')
+    image = models.ImageField(upload_to = 'media/_uploads/')
     
     def __str__(self):
         return self.title

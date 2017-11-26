@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Profile, Organization
-from problems.models import Comment, Solution
+from problems.models import Comment, Solution, Problem
 
 from django import forms
 
@@ -36,6 +36,7 @@ def index(request):
     profile = Profile.objects.get(user=request.user)
     comments = Comment.objects.filter(owner=request.user)
     solutions = Solution.objects.filter(owner=request.user).order_by("-isChosen")
+    problems = Problem.objects.filter(owner=request.user)
     num_prop_solutions = len(solutions)
     num_acc_solutions = 0
     
@@ -43,7 +44,7 @@ def index(request):
         if solution.isChosen:
             num_acc_solutions += 1
     return render(request, "account.html", {"user": request.user, "profile": profile, "solutions": solutions,
-    "comments":comments, "num_prop_solutions":num_prop_solutions, "num_acc_solutions": num_acc_solutions })
+    "comments":comments, "num_prop_solutions":num_prop_solutions, "num_acc_solutions": num_acc_solutions, "problems": problems })
     
     
 def public_profile(request, userid):
