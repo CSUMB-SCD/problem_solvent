@@ -200,14 +200,10 @@ GOOGLE_OAUTH2_CLIENT_SECRET = os.environ.get('G_CLIENT_SECRET')
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('G_CLIENT_ID')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('G_CLIENT_SECRET')
 
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'account'
+LOGIN_URL = 'login/'
+LOGOUT_URL = 'logout/'
+LOGIN_REDIRECT_URL = '/account/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-
-

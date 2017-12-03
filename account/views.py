@@ -78,19 +78,21 @@ def index(request, username=False):
                 return redirect('/')
     if not user:
         user = request.user
+    try: 
+        profile = Profile.objects.get(user=user)
+        comments = Comment.objects.filter(owner=user)
+        solutions = Solution.objects.filter(owner=user).order_by("-isChosen")
+        problems = Problem.objects.filter(owner=user)
+        num_prop_solutions = len(solutions)
+        num_acc_solutions = 0
         
-    profile = Profile.objects.get(user=user)
-    comments = Comment.objects.filter(owner=user)
-    solutions = Solution.objects.filter(owner=user).order_by("-isChosen")
-    problems = Problem.objects.filter(owner=user)
-    num_prop_solutions = len(solutions)
-    num_acc_solutions = 0
-    
-    for solution in solutions:
-        if solution.isChosen:
-            num_acc_solutions += 1
-    return render(request, "account.html", {"profile": profile, "solutions": solutions, "full_access": full_access,
-    "comments":comments, "num_prop_solutions":num_prop_solutions, "num_acc_solutions": num_acc_solutions, "problems": problems })
+        for solution in solutions:
+            if solution.isChosen:
+                num_acc_solutions += 1
+        return render(request, "account.html", {"profile": profile, "solutions": solutions, "full_access": full_access,
+        "comments":comments, "num_prop_solutions":num_prop_solutions, "num_acc_solutions": num_acc_solutions, "problems": problems })
+    except Exception as e:
+        return redirect('/')
 
 @login_required(login_url="/login")
 def edit_account(request):
@@ -156,5 +158,4 @@ def signup(request):
 
 def temp_login(request):
     return render(request, 'social_login.html')
-
 

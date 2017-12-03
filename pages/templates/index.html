@@ -13,22 +13,12 @@
 		<link rel="stylesheet" href="/static/assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie8.css" /><![endif]-->
 		
-		<script>
-		$(function() {
-			$('a[href*=#]').on('click', function(e) {
-    			e.preventDefault();
-    			$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-			});
-		});
-		</script>
-		
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 			{% include "nav.html" %}
-
 			<!-- Banner -->
 				<section id="banner">
 					<h2>Problem Solvent</h2>
@@ -58,85 +48,7 @@
 						<span class="image featured"><img src="/static/images/pic01.jpg" alt="" /></span>
 					</section>
 
-				<!--	<section class="box special features">
-						<div class="features-row">
-							<section>
-								<span class="icon major fa-bolt accent2"></span>
-								<h3>Magna etiam</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-							</section>
-							<section>
-								<span class="icon major fa-area-chart accent3"></span>
-								<h3>Ipsum dolor</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-							</section>
-						</div>
-						<div class="features-row">
-							<section>
-								<span class="icon major fa-cloud accent4"></span>
-								<h3>Sed feugiat</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-							</section>
-							<section>
-								<span class="icon major fa-lock accent5"></span>
-								<h3>Enim phasellus</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-							</section>
-						</div>
-					</section>
-
-					<div class="row">
-						<div class="6u 12u(narrower)">
-
-							<section class="box special">
-								<span class="image featured"><img src="/static/images/pic02.jpg" alt="" /></span>
-								<h3>Sed lorem adipiscing</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
-
-						</div>
-						<div class="6u 12u(narrower)">
-
-							<section class="box special">
-								<span class="image featured"><img src="/static/images/pic03.jpg" alt="" /></span>
-								<h3>Accumsan integer</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
-
-						</div>
-					</div>
-
-				</section>
-
-			-->
-			<!-- CTA -->
-			<!--	<section id="cta">-->
-
-			<!--		<h2>Sign up for beta access</h2>-->
-			<!--		<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>-->
-
-			<!--		<form>-->
-			<!--			<div class="row uniform 50%">-->
-			<!--				<div class="8u 12u(mobilep)">-->
-			<!--					<input type="email" name="email" id="email" placeholder="Email Address" />-->
-			<!--				</div>-->
-			<!--				<div class="4u 12u(mobilep)">-->
-			<!--					<input type="submit" value="Sign Up" class="fit" />-->
-			<!--				</div>-->
-			<!--			</div>-->
-			<!--		</form>-->
-
-			<!--	</section>-->
-
-			
 			<!-- Footer -->
-			
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>

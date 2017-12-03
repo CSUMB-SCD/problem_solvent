@@ -58,13 +58,13 @@ urlpatterns = [
     url(r'^leaderboard', leaderboard.views.index, name='leaderboard'),
     url(r'^oldchat', chat.views.index, name='oldchat'),
     url(r'^chat', chat_ws.views.index, name='chat'),
-    url(r'^login/$', login, name="login"),
-    url(r'^login$', login, name="login"),
+    url(r'^oldlogin/$', login, name="login"),
+    url(r'^oldlogin$', login, name="login"),
     url(r'^logout/$', logout),
     url(r'^signup/$', account.views.signup, name='signup'),
     
-    url(r'^temp_login/$', account.views.temp_login, name="temp_login"),
-    url(r'^oauth/', include('social_django.urls', namespace='social')),  # <--
+    url(r'^login/$', account.views.temp_login, name="temp_login"),
+    url('', include('social_django.urls', namespace='social')),  # <--
     #url(r'^oauth2callback', account.views.auth_return),
     url(r'^templogin', account.views.temp_login)
 ]
