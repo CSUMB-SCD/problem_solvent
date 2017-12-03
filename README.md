@@ -5,7 +5,7 @@ Team Members:
 
 * Meya Gorbea: Worked on the front end displaying messages and the user count/list.
 
-* Manual Gonzalez: Researched Django Channels
+* Manuel Gonzalez: Researched Django Channels
 
 ## Our Strategy
 We have a Cloud9 workspace, so we can easily work on something and avoid merge conflicts. We also split up the tasks into backend, frontend, and deployment. 

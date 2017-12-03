@@ -43,23 +43,26 @@ def index(request, page=1, solved=False):
     start = page*posts_per_page
     end = start + posts_per_page
     problems = Problem.objects.filter(isSolved=solved)
-    if start >= len(problems):
-        return redirect('problems')
-    if end > len(problems):
-        end = len(problems)
-    problems_subset = problems[start:end]
+    if problems:
+        if start >= len(problems):
+            return redirect('problems')
+        if end > len(problems):
+            end = len(problems)
+        problems_subset = problems[start:end]
     
-    if posts_per_page * (page + 1) >= len(problems):
-        next_page = False
-    else:
-        next_page = page + 1 + 1 # increment and move offset for start by 1
-    if page > 0:
-        prev_page = page - 1 + 1 # decrement and move offset for start by 1
-    else:
-        prev_page = False
+        if posts_per_page * (page + 1) >= len(problems):
+            next_page = False
+        else:
+            next_page = page + 1 + 1 # increment and move offset for start by 1
+        if page > 0:
+            prev_page = page - 1 + 1 # decrement and move offset for start by 1
+        else:
+            prev_page = False
         
-    return render(request, 'problems.html', {'problems': problems_subset, 'page': (page+1), 'next_page': next_page, 'prev_page': prev_page, 'solved': solved})
-    
+        return render(request, 'problems.html', {'problems': problems_subset, 'page': (page+1), 'next_page': next_page, 'prev_page': prev_page, 'solved': solved}, {'empty': False})
+    else:
+        return render(request, 'problems.html', {'empty': True})
+
 def problem(request, id):
     if id != None:
         problem = Problem.objects.get(id=id)

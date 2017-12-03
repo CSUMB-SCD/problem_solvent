@@ -37,6 +37,14 @@
 						{% endif %}
 						 
 					</header>
+					
+					{% if empty %}
+					
+					<div class="box">
+					<h4 align="center">There are no problems posted yet, get to work</h4>
+					</div>
+					{% else %}
+					
 					{% for problem in problems %}
 					<div class="box">
 						<div class="row">
@@ -69,7 +77,7 @@
 							</div>
 						</div>
 					</div>
-
+				{% endif %} <!-- -->
 
 				</section>
 

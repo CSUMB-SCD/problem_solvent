@@ -14,11 +14,6 @@ import problem_solvent.settings as settings
 
 from django import forms
 
-flow = OAuth2WebServerFlow(client_id=os.environ.get('GOOGLE_OAUTH2_CLIENT_ID'),
-                           client_secret=os.environ.get('G_CLIENT_SECRET'),
-                           scope='https://www.googleapis.com/auth/plus.me',
-                           redirect_uri='http://localhost:8080/oauth2callback')
-
 class UserProfileCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
     organization = forms.ModelChoiceField(queryset=Organization.objects.all())
@@ -92,6 +87,15 @@ def index(request, username=False):
         return render(request, "account.html", {"profile": profile, "solutions": solutions, "full_access": full_access,
         "comments":comments, "num_prop_solutions":num_prop_solutions, "num_acc_solutions": num_acc_solutions, "problems": problems })
     except Exception as e:
+        if full_access:
+            new_profile = Profile()
+            new_profile.user = request.user
+            new_profile.rank = 0
+            new_profile.points = 0
+            new_profile.org_rank = 0
+            new_profile.save()
+            Profile.objects.recalculate_points()
+            return redirect('/account/')
         return redirect('/')
 
 @login_required(login_url="/login")
@@ -141,19 +145,6 @@ def signup(request):
     else:
         form = UserProfileCreateForm()
     return render(request, 'account_form.html', {'form': form})
-    
-
-# @login_required(login_url="/login")
-# def auth_return(request):
-#     return("Not setup yet, man.")
-#     # if not xsrfutil.validate_token(settings.SECRET_KEY, request.REQUEST['state'], request.user):
-#     #     return  HttpResponseBadRequest()
-#     # credential = FLOW.step2_exchange(request.REQUEST)
-#     # ## I think this is the way we will get the storage object
-#     # ## originally it was: storage = DjangoORMStorage(CredentialsModel, 'id', request.user, 'credential')
-#     # storage = DjangoORMStorage(Profile, 'user', request.user, 'credential')
-#     # storage.put(credential)
-#     # return HttpResponseRedirect("/")
     
 
 def temp_login(request):
