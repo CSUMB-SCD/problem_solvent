@@ -75,7 +75,7 @@ def problem(request, id):
             {"problem":problem, "comments": comments, "solutions": solutions, "solution_form": sol_form, "comment_form":comment_form})
     return redirect('problems')
 
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def edit_problem(request, id):
     if id != None:
         problem = Problem.objects.get(id=id)
@@ -94,7 +94,7 @@ def edit_problem(request, id):
             return render(request, 'problem_form.html', {'form': problem_form, 'problem': problem, 'edit': True})
     return redirect('/problems/')
     
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def delete_problem(request, id):
     if id != None:
         problem = Problem.objects.get(id=id)
@@ -108,7 +108,7 @@ def delete_problem(request, id):
             return redirect('/problem/' + str(id) + '/')
     return redirect('/problems/')
 
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def solution(request, problem_id):
     if request.method == 'POST':
         form = SolutionForm(request.POST)
@@ -121,7 +121,7 @@ def solution(request, problem_id):
             solution.save()
     return redirect('/problem/' + str(problem_id) + '/')
     
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def comment(request, problem_id):
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -134,7 +134,7 @@ def comment(request, problem_id):
             comment.save()
     return redirect('/problem/' + str(problem_id) + '/')
     
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def delete_comment(request, comment_id):
     comment = Comment.objects.get(id=comment_id)
     problem_id = comment.problem.id
@@ -142,7 +142,7 @@ def delete_comment(request, comment_id):
         comment.delete()
     return redirect('/problem/' + str(problem_id) + '/')
     
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def delete_solution(request, solution_id):
     solution = Solution.objects.get(id=solution_id)
     problem_id = solution.problem.id
@@ -150,7 +150,7 @@ def delete_solution(request, solution_id):
         solution.delete()
     return redirect('/problem/' + str(problem_id) + '/')
     
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def select_solution(request, solution_id):
     solution = Solution.objects.get(id=solution_id)
     problem_id = solution.problem.id
@@ -164,7 +164,7 @@ def select_solution(request, solution_id):
         solution.save()
     return redirect('/problem/' + str(problem_id) + '/')
     
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def deselect_solution(request, solution_id):
     solution = Solution.objects.get(id=solution_id)
     problem_id = solution.problem.id
@@ -178,7 +178,7 @@ def deselect_solution(request, solution_id):
         profile.save()
     return redirect('/problem/' + str(problem_id) + '/')
 
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def new_problem(request):
     if request.method == 'POST':
         form = ProblemForm(request.POST, request.FILES)

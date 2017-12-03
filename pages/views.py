@@ -28,4 +28,3 @@ def db(request):
     greetings = Greeting.objects.all()
     print(request)
     return render(request, 'db.html', {'greetings': greetings})
-

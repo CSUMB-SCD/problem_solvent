@@ -63,7 +63,10 @@ password: soluti0n (there is a zero instead of O)
 username: first
 password: soluti0n
 ## backup db
-python manage.py dumpdata > db.json
+## This will save it properly
+python manage.py dumpdata --natural-foreign --exclude auth.permission --exclude contenttypes --indent 4 > data.json
 
 ## restore db
 python manage.py loaddata db.json
+
+
