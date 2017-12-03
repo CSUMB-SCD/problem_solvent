@@ -5,9 +5,19 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Profile, Organization
 from problems.models import Comment, Solution, Problem
-
+from oauth2client.contrib import xsrfutil
+from oauth2client.client import flow_from_clientsecrets
+from oauth2client.contrib.django_util.storage import DjangoORMStorage
+from oauth2client.client import OAuth2WebServerFlow
+import os
+import problem_solvent.settings as settings
 
 from django import forms
+
+flow = OAuth2WebServerFlow(client_id=os.environ.get('GOOGLE_OAUTH2_CLIENT_ID'),
+                           client_secret=os.environ.get('G_CLIENT_SECRET'),
+                           scope='https://www.googleapis.com/auth/plus.me',
+                           redirect_uri='http://localhost:8080/oauth2callback')
 
 class UserProfileCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -114,7 +124,6 @@ def change_password(request):
 
     return render(request, 'account_form.html', {'form': form, 'password':True })
 
-
 def signup(request):
     if request.method == 'POST':
         form = UserProfileCreateForm(request.POST)
@@ -130,3 +139,22 @@ def signup(request):
     else:
         form = UserProfileCreateForm()
     return render(request, 'account_form.html', {'form': form})
+    
+
+# @login_required(login_url="/login")
+# def auth_return(request):
+#     return("Not setup yet, man.")
+#     # if not xsrfutil.validate_token(settings.SECRET_KEY, request.REQUEST['state'], request.user):
+#     #     return  HttpResponseBadRequest()
+#     # credential = FLOW.step2_exchange(request.REQUEST)
+#     # ## I think this is the way we will get the storage object
+#     # ## originally it was: storage = DjangoORMStorage(CredentialsModel, 'id', request.user, 'credential')
+#     # storage = DjangoORMStorage(Profile, 'user', request.user, 'credential')
+#     # storage.put(credential)
+#     # return HttpResponseRedirect("/")
+    
+
+def temp_login(request):
+    return render(request, 'social_login.html')
+
+

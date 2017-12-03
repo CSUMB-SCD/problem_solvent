@@ -12,6 +12,16 @@
 		<!--[if lte IE 8]><script src="/static/assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="/static/assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie8.css" /><![endif]-->
+		
+		<script>
+		$(function() {
+			$('a[href*=#]').on('click', function(e) {
+    			e.preventDefault();
+    			$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+			});
+		});
+		</script>
+		
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
@@ -25,27 +35,30 @@
 					<p>Community problems solved by crowd sourced competition.</p>
 					<ul class="actions">
 						{% if not user.is_authenticated %}
-						<li><a href="/signup" class="button special">Sign Up</a></li>
+						<li><a href="/signup/" class="button special">Sign Up</a></li>
 						{% endif %}
-						<li><a href="#" class="button">Learn More</a></li>
+						<li><a href="#learnmore" class="button">Learn More</a></li>
 					</ul>
 				</section>
 
 			<!-- Main -->
 				<section id="main" class="container">
-
-					<section class="box special">
+					
+			
+					<section id = "learnmore" class="box special">
 						<header class="major">
-							<h2>Introducing the ultimate mobile app
+					
+							<h2>Introducing the ultimate crowd sourced competition
 							<br />
-							for doing stuff with your phone</h2>
-							<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
-							adipiscing nunc adipiscing. Condimentum turpis massa.</p>
+						    </h2>
+							<p>We want to create a bridge between those fortunate enough to have the knowledge to solve community problems,
+								and those experiencing them in their lives. It will also give students an opportunity to use their education
+								in a real-world situation.</p>
 						</header>
 						<span class="image featured"><img src="/static/images/pic01.jpg" alt="" /></span>
 					</section>
 
-					<section class="box special features">
+				<!--	<section class="box special features">
 						<div class="features-row">
 							<section>
 								<span class="icon major fa-bolt accent2"></span>
@@ -101,6 +114,7 @@
 
 				</section>
 
+			-->
 			<!-- CTA -->
 			<!--	<section id="cta">-->
 
@@ -120,7 +134,9 @@
 
 			<!--	</section>-->
 
+			
 			<!-- Footer -->
+			
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>

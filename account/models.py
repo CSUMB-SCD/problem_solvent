@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from problems.models import Problem
+from oauth2client.contrib.django_util.models import CredentialsField
+
+
 
 class Organization(models.Model):
     # id (auto created)
@@ -70,6 +73,7 @@ class Profile(models.Model):
     organization = models.ForeignKey('Organization', on_delete=models.SET_NULL, null=True, blank=True)
     image = models.ImageField(upload_to = 'media/_uploads/', blank=True)
     objects = ProfileManager()
+    credential = CredentialsField()
     def __str__(self):
         return self.user.username
         

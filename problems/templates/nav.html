@@ -3,17 +3,17 @@
 					<nav id="nav">
 						<ul>
                             <li><a href="/">Home</a></li>
-							<li><a href="/problems">Problems</a></li>
+							<li><a href="/problems/">Problems</a></li>
 							{% if user.is_authenticated %}
-							<li><a href="/newproblem">Post New Problem</a></li>
-							<li><a href="/account">Account</a>
+							<li><a href="/newproblem/">Post New Problem</a></li>
+							<li><a href="/account/">Account</a>
 							{% endif %}
 								<!--<ul>-->
 								<!--	<li><a href="#">Profile</a></li>-->
 								<!--	<li><a href="#">Log out</a></li>-->
 								<!--</ul>-->
 							</li>
-							<li><a href="/leaderboard">Leaderboard</a></li>
+							<li><a href="/leaderboard/">Leaderboard</a></li>
 							<!--<li>-->
 								<!--<a href="#" class="icon fa-angle-down">Layouts</a>-->
 								<!--<ul>-->
@@ -34,7 +34,7 @@
 							{% if user.is_authenticated %} 
 								<li><a href="/logout?next=/" class="button">Log out</a></li>
 							{% else %}
-								<li><a href="/login" class="button">Log in</a></li>
+								<li><a href="/login/" class="button">Log in</a></li>
 							{% endif %}
 						</ul>
 					</nav>

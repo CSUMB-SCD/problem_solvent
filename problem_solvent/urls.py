@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.contrib.auth.views import login, logout
 from django.conf.urls.static import static
 from django.conf import settings
+
 admin.autodiscover()
 
 import pages.views
@@ -53,14 +54,19 @@ urlpatterns = [
     # without slash
     url(r'^account/(?P<username>.*)$', account.views.index, name='account'),
     
-    
 
     url(r'^leaderboard', leaderboard.views.index, name='leaderboard'),
     url(r'^oldchat', chat.views.index, name='oldchat'),
     url(r'^chat', chat_ws.views.index, name='chat'),
     url(r'^login/$', login, name="login"),
+    url(r'^login$', login, name="login"),
     url(r'^logout/$', logout),
-    url(r'^signup/$', account.views.signup, name='signup')
+    url(r'^signup/$', account.views.signup, name='signup'),
+    
+    url(r'^temp_login/$', account.views.temp_login, name="temp_login"),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),  # <--
+    #url(r'^oauth2callback', account.views.auth_return),
+    url(r'^templogin', account.views.temp_login)
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
