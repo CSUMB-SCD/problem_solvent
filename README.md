@@ -46,6 +46,7 @@ python manage.py collectstatic
 python manage.py startapp your_app_name
 
 ## setup the apps (creates db entries and gets everything ready)
+python manage.py makemigrations
 python manage.py migrate
 
 ## start postgres server

@@ -80,7 +80,7 @@
 					<div class="box">
 						<div class="row">
 							<div class="12u">
-								<h3>{{ solution.owner.username }}</h3>
+								<h3><a href='/account/{{ solution.owner.id }}/'>{{ solution.owner.username }}</a></h3>
 								<p>{{ solution.text }}
 								</p>
 								{% if solution.isChosen %}

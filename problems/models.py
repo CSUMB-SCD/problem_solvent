@@ -8,7 +8,7 @@ class Problem(models.Model):
     # Title string
     title = models.CharField(max_length=100)
     # Created by (User Id)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=None, related_name='problem_owner')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, default=None, related_name='problem_owner')
     # Date created
     created = models.DateTimeField()
     # IsSolved bool
