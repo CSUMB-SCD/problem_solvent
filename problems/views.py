@@ -43,6 +43,7 @@ def index(request, page=1, solved=False):
     start = page*posts_per_page
     end = start + posts_per_page
     problems = Problem.objects.filter(isSolved=solved)
+    
     if problems:
         if start >= len(problems):
             return redirect('problems')
@@ -65,14 +66,18 @@ def index(request, page=1, solved=False):
 
 def problem(request, id):
     if id != None:
-        problem = Problem.objects.get(id=id)
-        if problem:
-            comments = Comment.objects.filter(problem=problem)
-            solutions = Solution.objects.filter(problem=problem).order_by("-isChosen")
-            sol_form = SolutionForm()
-            comment_form = CommentForm()
-            return render(request, 'problem.html', 
-            {"problem":problem, "comments": comments, "solutions": solutions, "solution_form": sol_form, "comment_form":comment_form})
+        try:
+            problem = Problem.objects.get(id=id)
+            if problem:
+                comments = Comment.objects.filter(problem=problem)
+                solutions = Solution.objects.filter(problem=problem).order_by("-isChosen")
+                sol_form = SolutionForm()
+                comment_form = CommentForm()
+                return render(request, 'problem.html', 
+                {"problem":problem, "comments": comments, "solutions": solutions, "solution_form": sol_form, "comment_form":comment_form})
+        except Exception as e:
+            # problem id does not exist, redirect
+            pass
     return redirect('problems')
 
 @login_required(login_url="/login/")
@@ -120,7 +125,7 @@ def solution(request, problem_id):
             solution.date = timezone.now()
             solution.save()
     return redirect('/problem/' + str(problem_id) + '/')
-    
+
 @login_required(login_url="/login/")
 def comment(request, problem_id):
     if request.method == 'POST':

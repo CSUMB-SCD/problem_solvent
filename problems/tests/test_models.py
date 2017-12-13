@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Problem, Category
+from problems.models import Problem, Category
 from django.utils import timezone
 
 class ProblemModelTest(TestCase):

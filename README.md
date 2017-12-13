@@ -1,12 +1,3 @@
-# Homework 5 Questions
-Team Members: 
-
-* Nigel Hardy: Worked on getting the environment working with Python/Django/Websockets/Redis/Postgres and setup the backend.
-
-* Meya Gorbea: Worked on the front end displaying messages and the user count/list.
-
-* Manuel Gonzalez: Researched Django Channels
-
 ## Our Strategy
 We have a Cloud9 workspace, so we can easily work on something and avoid merge conflicts. We also split up the tasks into backend, frontend, and deployment. 
 
@@ -66,6 +57,9 @@ password: soluti0n
 ## backup db
 ## This will save it properly
 python manage.py dumpdata --natural-foreign --exclude auth.permission --exclude contenttypes --indent 4 > data.json
+
+## Run with test db for checking with throw away db
+./manage.py testserver data_test.json --addrport 0:8080
 
 ## restore db
 python manage.py loaddata db.json
