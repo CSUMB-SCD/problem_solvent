@@ -36,10 +36,12 @@ class UserProfileCreateForm(UserCreationForm):
             profile.save()
             Profile.objects.rank_profiles()
         return user
-class ChangePassForm(PasswordChangeForm):
-    class Meta:
-        model = User
-        fields = ("old_password", "new_password1", "new_password2")
+
+
+# class ChangePassForm(PasswordChangeForm):
+#     class Meta:
+#         model = User
+#         fields = ("old_password", "new_password1", "new_password2")
 class UserChangeForm(forms.ModelForm):
     email = forms.EmailField(required=True)
     # organization = forms.ModelChoiceField(queryset=Organization.objects.all())

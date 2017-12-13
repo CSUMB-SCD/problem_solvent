@@ -163,10 +163,8 @@ def select_solution(request, solution_id):
         solution.isChosen = True
         solution.problem.isSolved = True
         solution.problem.save()
-        profile = Profile.objects.get(user=solution.owner)
-        profile.points += solution.problem.points
-        profile.save()
         solution.save()
+        Profile.objects.recalculate_points()
     return redirect('/problem/' + str(problem_id) + '/')
     
 @login_required(login_url="/login/")
@@ -174,13 +172,11 @@ def deselect_solution(request, solution_id):
     solution = Solution.objects.get(id=solution_id)
     problem_id = solution.problem.id
     if solution.problem.owner.id == request.user.id:
+        solution.isChosen = False
         solution.problem.isSolved = False
         solution.problem.save()
-        solution.isChosen = False
         solution.save()
-        profile = Profile.objects.get(user=solution.owner)
-        profile.points -= solution.problem.points
-        profile.save()
+        Profile.objects.recalculate_points()
     return redirect('/problem/' + str(problem_id) + '/')
 
 @login_required(login_url="/login/")

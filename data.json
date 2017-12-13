@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$36000$Y3fW2P6JnlKF$68zCI+AVmNrE9MzGl6NQ8UW44QBcHJiKL0I//sZgnQg=",
-        "last_login": "2017-12-11T05:35:31.780Z",
+        "last_login": "2017-12-13T00:04:52.573Z",
         "is_superuser": true,
         "username": "prob_solv",
         "first_name": "Nigel",
@@ -169,14 +169,6 @@
 },
 {
     "model": "sessions.session",
-    "pk": "mnn94p5gjlzz07lhbggorb9w83njyqyf",
-    "fields": {
-        "session_data": "MzFmZjNhN2ZmYmJjMDIyMzY1ZTZiOTIyZTc5MDBmNDliMjhlMjhiYTp7Il9hdXRoX3VzZXJfaGFzaCI6ImQwZjljMjhjNjk1MzZmZTg5OTBhMTVhNWI3NDIwODVlYzhmNTYwNjgiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJzb2NpYWxfY29yZS5iYWNrZW5kcy5nb29nbGUuR29vZ2xlT0F1dGgyIiwiZ29vZ2xlLW9hdXRoMl9zdGF0ZSI6IkI2MGhVcnlZa1ZaeUpUcE43V3RWZXBSY0ZpbGYyZkhvIiwic29jaWFsX2F1dGhfbGFzdF9sb2dpbl9iYWNrZW5kIjoiZ29vZ2xlLW9hdXRoMiIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
-        "expire_date": "2017-12-18T18:47:01.355Z"
-    }
-},
-{
-    "model": "sessions.session",
     "pk": "qr4h00mey7k2wv5z2ht52rpg865dyv5z",
     "fields": {
         "session_data": "YTVmNWYwNjZkZTNhYmMzZmI2Y2U5ZjU0MjQyNjk1MGQ1OWUyZDEwYzp7Il9hdXRoX3VzZXJfaGFzaCI6IjFjMWM4NDJlNjY0NTUxNWEzMjgyNWU4ZmYxNjI5YzJhMDIyMDgyNzMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJzb2NpYWxfY29yZS5iYWNrZW5kcy5nb29nbGUuR29vZ2xlT0F1dGgyIiwiZ29vZ2xlLW9hdXRoMl9zdGF0ZSI6IjM1M3NuSGxlRFdjTFA5b2NQSUZxcE80YWNGSjdaMG5DIiwic29jaWFsX2F1dGhfbGFzdF9sb2dpbl9iYWNrZW5kIjoiZ29vZ2xlLW9hdXRoMiIsIl9hdXRoX3VzZXJfaWQiOiIxNyJ9",
@@ -281,7 +273,7 @@
     "pk": 1,
     "fields": {
         "name": "CSUMB",
-        "points": 0,
+        "points": 10,
         "rank": 1
     }
 },
@@ -291,7 +283,7 @@
     "fields": {
         "name": "Hartnell",
         "points": 0,
-        "rank": 1
+        "rank": 2
     }
 },
 {
@@ -300,7 +292,7 @@
     "fields": {
         "name": "MPC",
         "points": 0,
-        "rank": 1
+        "rank": 2
     }
 },
 {
@@ -308,7 +300,7 @@
     "pk": 1,
     "fields": {
         "points": 0,
-        "rank": 1,
+        "rank": 2,
         "org_rank": 0,
         "organization": 1,
         "image": "media/_uploads/village_nw2WQ3o.jpg",
@@ -320,7 +312,7 @@
     "pk": 2,
     "fields": {
         "points": 0,
-        "rank": 1,
+        "rank": 2,
         "org_rank": 0,
         "organization": 3,
         "image": "",
@@ -332,7 +324,7 @@
     "pk": 11,
     "fields": {
         "points": 0,
-        "rank": 1,
+        "rank": 2,
         "org_rank": 0,
         "organization": 1,
         "image": "",
@@ -344,7 +336,7 @@
     "pk": 13,
     "fields": {
         "points": 0,
-        "rank": 1,
+        "rank": 2,
         "org_rank": -1,
         "organization": 1,
         "image": "",
@@ -356,7 +348,7 @@
     "pk": 14,
     "fields": {
         "points": 0,
-        "rank": 1,
+        "rank": 2,
         "org_rank": 0,
         "organization": 1,
         "image": "",
@@ -368,7 +360,7 @@
     "pk": 16,
     "fields": {
         "points": 0,
-        "rank": 1,
+        "rank": 2,
         "org_rank": 0,
         "organization": 1,
         "image": "media/_uploads/turtle.jpg",
@@ -379,7 +371,7 @@
     "model": "account.profile",
     "pk": 17,
     "fields": {
-        "points": 0,
+        "points": 10,
         "rank": 1,
         "org_rank": 0,
         "organization": 1,
@@ -7578,7 +7570,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "mgorbea@csumb.edu",
-        "extra_data": "{\"token_type\": \"Bearer\", \"auth_time\": 1512447123, \"access_token\": \"ya29.GlwZBU8O_awLDPJVa0LNr0Itat683-ZeXw3Dy6v4dbwvD1pXKTbDf2N74EYfrEmCgdo_dIsJw0Kw4qn6je_Hwe1DWEJjMmBMFV1J9fRArCfu_qgltZsPzZsvd3EaXQ\", \"expires\": 3600}"
+        "extra_data": "{\"expires\": 3600, \"access_token\": \"ya29.GlwZBU8O_awLDPJVa0LNr0Itat683-ZeXw3Dy6v4dbwvD1pXKTbDf2N74EYfrEmCgdo_dIsJw0Kw4qn6je_Hwe1DWEJjMmBMFV1J9fRArCfu_qgltZsPzZsvd3EaXQ\", \"token_type\": \"Bearer\", \"auth_time\": 1512447123}"
     }
 },
 {
@@ -7590,7 +7582,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "gwcmonterey@gmail.com",
-        "extra_data": "{\"token_type\": \"Bearer\", \"auth_time\": 1512334316, \"access_token\": \"ya29.GlsXBeMrFmyCm4QXMgk5GK7yFVEIGh5Ve5sc0fug7S0IfsjD3xKbFO0UrAgGVpClcOqhH57MKKe2ARASILWT0T1Olfm50VisLii_AqO0oINwrhjDCpcJ29dT3bp9\", \"expires\": 3600}"
+        "extra_data": "{\"token_type\": \"Bearer\", \"access_token\": \"ya29.GlsXBeMrFmyCm4QXMgk5GK7yFVEIGh5Ve5sc0fug7S0IfsjD3xKbFO0UrAgGVpClcOqhH57MKKe2ARASILWT0T1Olfm50VisLii_AqO0oINwrhjDCpcJ29dT3bp9\", \"expires\": 3600, \"auth_time\": 1512334316}"
     }
 },
 {
@@ -7602,7 +7594,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "nhardy@csumb.edu",
-        "extra_data": "{\"token_type\": \"Bearer\", \"auth_time\": 1512970531, \"access_token\": \"ya29.GlwfBaBuxohhScl5xcxJeNxiG6BTU9vSZ2Ve2XmZHPe5v1ISF1BQ_XdgA8eRzqoJbkK_c61nMOIyutTXr-JUnemvNnmo_f1vNJ3p93NntFGrccaoeXx7wtAto7NFBg\", \"expires\": 3600}"
+        "extra_data": "{\"token_type\": \"Bearer\", \"access_token\": \"ya29.GlwgBc-pbaR5_JS3V5C79Qzj-nEpC1ggZV3edaE32TB3L_S25b_ohFlikZclKr6oLOK8lIhbrk3EA9lNMJ8jWcMhV7pmOa11bQUWTUWP3VEAJnP8yiNIPh4WACYjWw\", \"expires\": 3599, \"auth_time\": 1513123492}"
     }
 },
 {
@@ -7614,7 +7606,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "manny42g@gmail.com",
-        "extra_data": "{\"token_type\": \"Bearer\", \"auth_time\": 1512526731, \"access_token\": \"ya29.GlwaBadcCwXiY6w8RtB51hbFZXB0OJN1QHPNapBByj4k_n8b0mv1JpjkoZ0HxQ_Q3HxisToCx6PQdsKZqnmgKK-G6FTIKPkLm8XbLgh7t0Ks9onKG1Zs-KnFB2zh2Q\", \"expires\": 3600}"
+        "extra_data": "{\"expires\": 3600, \"access_token\": \"ya29.GlwaBadcCwXiY6w8RtB51hbFZXB0OJN1QHPNapBByj4k_n8b0mv1JpjkoZ0HxQ_Q3HxisToCx6PQdsKZqnmgKK-G6FTIKPkLm8XbLgh7t0Ks9onKG1Zs-KnFB2zh2Q\", \"token_type\": \"Bearer\", \"auth_time\": 1512526731}"
     }
 },
 {
@@ -7626,7 +7618,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "nigeljames.12@gmail.com",
-        "extra_data": "{\"token_type\": \"Bearer\", \"auth_time\": 1512423059, \"access_token\": \"ya29.GlsYBX9W0xZrdvzLw7G8cqUzUZDCjs0fg0IK-tYxc5fMSlv7gJPHLK3YkcyhenNIU0YmIjtjOylzGnQ4XTYXDMGSI7Z0DWOirHIve5_4JfkaqCj2tnU0Ypuao0LO\", \"expires\": 3600}"
+        "extra_data": "{\"token_type\": \"Bearer\", \"access_token\": \"ya29.GlsYBX9W0xZrdvzLw7G8cqUzUZDCjs0fg0IK-tYxc5fMSlv7gJPHLK3YkcyhenNIU0YmIjtjOylzGnQ4XTYXDMGSI7Z0DWOirHIve5_4JfkaqCj2tnU0Ypuao0LO\", \"expires\": 3600, \"auth_time\": 1512423059}"
     }
 }
 ]

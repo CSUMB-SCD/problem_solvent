@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from account import views
+from account import views, models
 
 from problems.models import Problem, Solution
 from django.urls import reverse
@@ -19,7 +19,6 @@ class AccountPageTestViews(TestCase):
         """
         Check user's own account shows proper information and buttons
         """
-        
         self.client.force_login(self.user)
         response = self.client.get(reverse(views.index))
         self.assertContains(response, self.user.username)
@@ -48,12 +47,20 @@ class AccountPageTestViews(TestCase):
         self.assertContains(response, 'Log out')
         self.assertEqual(response.status_code, 200)
         
+    def test_non_existant_user_account_page(self):
+        """
+        Check user is redirected to their own account when trying to view non existant account
+        """
+        self.client.force_login(self.user)
+        response = self.client.get('/account/nonexistantuser/')
+        self.assertRedirects(response, '/account/')
+        
     def test_user_edit_account(self):
         """
         Logged in user can view their own edit account form/page
         """
         self.client.force_login(self.user)
-        response = self.client.get(views.edit_account)
+        response = self.client.get(reverse(views.edit_account))
         self.assertEquals(response.status_code, 200)
         
     def test_user_change_password(self):
@@ -61,7 +68,7 @@ class AccountPageTestViews(TestCase):
         Logged in user can view their own change password form/page
         """
         self.client.force_login(self.user)
-        response = self.client.get(views.change_password)
+        response = self.client.get(reverse(views.change_password))
         self.assertEquals(response.status_code, 200)
         
     def test_signup_page_view(self):
@@ -69,9 +76,38 @@ class AccountPageTestViews(TestCase):
         Test if user can view signup screen
         """
         self.client.force_login(self.user)
-        response = self.client.get(views.signup)
+        response = self.client.get(reverse(views.signup))
         self.assertEquals(response.status_code, 200)
     
+    def test_signup_page_form(self):
+        """
+        Test creating a user with UserProfileCreateForm
+        """
+        temp_user_name = 'test_user_temp'
+        form = views.UserProfileCreateForm({
+            'username': temp_user_name,
+            'password1': 'pass123##',
+            'password2': 'pass123##',
+            'email': 'email@email.com',
+            'organization': models.Organization.objects.all()[0].id
+        })
+        self.assertTrue(form.is_valid())
+        form.save()
+        new_test_user = User.objects.get(username=temp_user_name)
+        self.assertTrue(new_test_user)
+        
+    def test_edit_user_form(self):
+        """
+        Test change email/info of existing user
+        """
+        new_email = 'new_email@email.com'
+        form = views.UserChangeForm({'email': new_email}, instance=models.Profile.objects.get(user=self.user))
+        self.assertTrue(form.is_valid())
+        form.save()
+        # get updated user object
+        self.user = User.objects.get(username=self.user.username)
+        self.assertEquals(self.user.email, new_email)
+        
     def test_anon_account_redirect(self):
         """
         Check if user not logged in is redirected

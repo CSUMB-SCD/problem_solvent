@@ -56,6 +56,7 @@ class ProfileManager(models.Manager):
                 solution = Solution.objects.get(problem=problem, isChosen=True)
                 profile = Profile.objects.get(user=solution.owner)
                 profile.points += problem.points
+                profile.save()
             except Exception as e:
                 pass
         self.rank_profiles()
