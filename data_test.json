@@ -277,6 +277,20 @@
     }
 },
 {
+    "model": "problems.solution",
+    "pk": 27,
+    "fields": {
+        "owner": [
+            "prob_solv"
+        ],
+        "likes": 0,
+        "problem": 22,
+        "date": "2017-12-04T21:31:57.823Z",
+        "text": "You could try carbon filters.",
+        "isChosen": false
+    }
+},
+{
     "model": "account.organization",
     "pk": 1,
     "fields": {

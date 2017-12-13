@@ -56,9 +56,7 @@ class UserChangeForm(forms.ModelForm):
 
 # Create your views here.
 def index(request, username=False):
-    if request.user.is_authenticated() and not username:
-        full_access = True
-    elif request.user.is_authenticated() and username == request.user.username:
+    if request.user.is_authenticated() and (not username or username == request.user.username):
         full_access = True
     else:
         full_access = False
@@ -98,7 +96,7 @@ def index(request, username=False):
             return redirect('/account/')
         return redirect('/')
 
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def edit_account(request):
     profile = Profile.objects.get(user=request.user)
     if request.method == 'POST':
@@ -113,7 +111,7 @@ def edit_account(request):
 
     return render(request, 'account_form.html', {'form': info_form })
     
-@login_required(login_url="/login")
+@login_required(login_url="/login/")
 def change_password(request):
     profile = Profile.objects.get(user=request.user)
     if request.method == 'POST':
