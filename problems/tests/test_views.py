@@ -2,7 +2,7 @@ from django.test import TestCase
 
 from django.urls import reverse
 from problems import views
-from problems.models import Problem
+from problems.models import Problem, Solution
 from django.core.management import call_command
 from django.test.client import Client
 from django.contrib.auth.models import User
@@ -68,7 +68,26 @@ class ProblemsAuthViewTests(TestCase):
         self.client.force_login(self.user)
         response = self.client.get('/newproblem/')
         self.assertEqual(response.status_code, 200)
-
+        
+        
+    def test_select_deselect_solution(self):
+        """
+        Check if new problem form is rendered for a logged in user
+        """
+        self.client.force_login(self.user)
+        solutions = Solution.objects.filter(isChosen=True)
+        problem_id = solutions[0].problem.id
+        solution_id = solutions[0].id
+        # deselect solution using view
+        response = self.client.get(reverse(views.deselect_solution, args=[solution_id]))
+        self.assertRedirects(response, '/problem/' + str(problem_id) + '/')
+        
+        # select using view
+        response = self.client.get(reverse(views.select_solution, args=[solution_id]))
+        self.assertRedirects(response, '/problem/' + str(problem_id) + '/')
+        solutions = Solution.objects.get(id=solution_id)
+        self.assertTrue(solutions)
+        
 class ProblemsAnonViewTests(TestCase):
     # tests for each view when the user is not logged in
     def test_empty_view(self):

@@ -53,7 +53,23 @@ class AccountPageTestViews(TestCase):
         Logged in user can view their own edit account form/page
         """
         self.client.force_login(self.user)
-        response = self.client.get('/editaccount/')
+        response = self.client.get(views.edit_account)
+        self.assertEquals(response.status_code, 200)
+        
+    def test_user_change_password(self):
+        """
+        Logged in user can view their own change password form/page
+        """
+        self.client.force_login(self.user)
+        response = self.client.get(views.change_password)
+        self.assertEquals(response.status_code, 200)
+        
+    def test_signup_page_view(self):
+        """
+        Test if user can view signup screen
+        """
+        self.client.force_login(self.user)
+        response = self.client.get(views.signup)
         self.assertEquals(response.status_code, 200)
     
     def test_anon_account_redirect(self):
