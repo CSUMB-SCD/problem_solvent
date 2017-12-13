@@ -1,0 +1,7 @@
+[run]
+omit =
+    */migrations/*
+    */admin.py
+    */__init__.py
+    pages/models.py
+    leaderboard/models.py

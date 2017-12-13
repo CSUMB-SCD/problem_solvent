@@ -28,8 +28,12 @@ SECRET_KEY = 'i+acxn5(akgsn!sr4^qgf(^m&*@+g1@u^t@=8s@axc41ml*f=s'
 DEBUG = True
 
 #TEST_RUNNER = 'problem_solvent.heroku_test_runner.HerokuDiscoverRunner'
-
-
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=problems,account,leaderboard,pages',
+]
 # Application definition
 
 INSTALLED_APPS = (
@@ -40,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_nose',
     'channels',
     'pages',
     'chat',

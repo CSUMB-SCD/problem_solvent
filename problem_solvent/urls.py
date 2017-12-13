@@ -20,7 +20,6 @@ import leaderboard.views
 urlpatterns = [
     url(r'^pubchat', chat_ws.views.index, name='chat'),
     url(r'^$', pages.views.index, name='index'),
-    url(r'^db', pages.views.db, name='db'),
 
     url(r'^admin/', include(admin.site.urls)),
     
@@ -65,7 +64,6 @@ urlpatterns = [
     
     url(r'^login/$', account.views.temp_login, name="temp_login"),
     url('', include('social_django.urls', namespace='social')),  # <--
-    #url(r'^oauth2callback', account.views.auth_return),
     url(r'^templogin', account.views.temp_login)
 ]
 if settings.DEBUG:
