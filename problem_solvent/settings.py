@@ -33,6 +33,8 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=problems,account,leaderboard,pages',
+    '--cover-html',
+    '--cover-html-dir=media/coverage/'
 ]
 # Application definition
 

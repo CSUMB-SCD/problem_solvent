@@ -28,10 +28,6 @@ class Problem(models.Model):
     
     def __str__(self):
         return self.title
-    def toUrlId(self):
-        fourCharString = str(self.id)
-        while len(fourCharString) < 4:
-            fourCharString = "0" + fourCharString
 
 
 class Category(models.Model):
