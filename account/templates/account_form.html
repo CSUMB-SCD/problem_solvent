@@ -1,14 +1,10 @@
 <!DOCTYPE HTML>
-<!--
-	Alpha by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-
 <html>
 	<head>
-		{% if user.is_authenticated %}
+		{% if user.is_authenticated and not password %}
 		<title>Edit Account</title>
+		{% elif user.is_authenticated %}
+		<title>Change Password</title>
 		{% else %}
 		<title>Sign Up</title>
 		{% endif %}
@@ -27,8 +23,10 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						{% if user.is_authenticated %}
+						{% if user.is_authenticated and not password %}
 						<h2>Edit Account Info</h2>
+						{% elif user.is_authenticated %}
+						<h2>Change Password</h2>
 						{% else %}
 						<h2>Create a New Account</h2>
 						<p>Your first step to changing the world!</p>

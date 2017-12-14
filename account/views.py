@@ -145,8 +145,4 @@ def signup(request):
     else:
         form = UserProfileCreateForm()
     return render(request, 'account_form.html', {'form': form})
-    
-
-def temp_login(request):
-    return render(request, 'social_login.html')
 

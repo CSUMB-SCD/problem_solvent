@@ -49,7 +49,6 @@ INSTALLED_APPS = (
     'django_nose',
     'channels',
     'pages',
-    'chat',
     'chat_ws',
     'problems',
     'account',

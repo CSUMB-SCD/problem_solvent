@@ -8,7 +8,6 @@ admin.autodiscover()
 
 import pages.views
 import chat_ws.views
-import chat.views
 import problems.views
 import account.views
 import leaderboard.views
@@ -18,7 +17,6 @@ import leaderboard.views
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
-    url(r'^pubchat', chat_ws.views.index, name='chat'),
     url(r'^$', pages.views.index, name='index'),
 
     url(r'^admin/', include(admin.site.urls)),
@@ -55,16 +53,12 @@ urlpatterns = [
     
 
     url(r'^leaderboard', leaderboard.views.index, name='leaderboard'),
-    url(r'^oldchat', chat.views.index, name='oldchat'),
     url(r'^chat', chat_ws.views.index, name='chat'),
-    url(r'^oldlogin/$', login, name="login"),
-    url(r'^oldlogin$', login, name="login"),
     url(r'^logout/$', logout),
     url(r'^signup/$', account.views.signup, name='signup'),
     
-    url(r'^login/$', account.views.temp_login, name="temp_login"),
-    url('', include('social_django.urls', namespace='social')),  # <--
-    url(r'^templogin', account.views.temp_login)
+    url(r'^login/$', login, name="login"),
+    url('', include('social_django.urls', namespace='social')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

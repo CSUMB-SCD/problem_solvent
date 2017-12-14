@@ -20,13 +20,14 @@
 
 			<!-- Main -->
 				<section id="main" class="container">
-					<header>
-						<h2>Login</h2>
-
-					</header>
+					<div class="box" align="center">
+				      <h2>Sign in with Google<h2>
+				      <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-social-icon btn-google-plus"><i class=" fa fa-google-plus"></i></a> 
+				   </div>
                     <div class="box">
 						<div class="row">
 							<div class="12u">
+								<h3>Login</h3>
 								<form action="." method="POST">
 	                                {{ form }}
 	                                {% csrf_token %}
@@ -36,6 +37,7 @@
 							
 						</div>
 					</div>
+					
 				</section>
 			<!-- Footer -->
 			{% include "footer.html" %}
