@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/CSUMB-SCD/problem_solvent.svg?style=svg)](https://circleci.com/gh/CSUMB-SCD/problem_solvent)
 ## Our Strategy
 We have a Cloud9 workspace, so we can easily work on something and avoid merge conflicts. We also split up the tasks into backend, frontend, and deployment. 
 
@@ -18,12 +19,12 @@ Password: 41SOLUTION**
 5. Repeat step 2 after starting Redis and Postgres
 
 Go to website: https://problem-solvent-nigelhardy.c9users.io:8080
-Theme Website: https://html5up.net/alpha
+
 ## Run Configuration is Necessary
 You must use the run configuration called RunDjango because the environment variable is required
 
 #Run these commands in the terminal
-    python manage.py runserver 0.0.0.0:8080
+python manage.py runserver 0:8080
 
 # other commands you may want
 
@@ -52,8 +53,6 @@ sudo service redis-server start
 username: test_user
 password: soluti0n (there is a zero instead of O)
 
-username: first
-password: soluti0n
 ## backup db
 ## This will save it properly
 python manage.py dumpdata --natural-foreign --exclude auth.permission --exclude contenttypes --indent 4 > data.json
