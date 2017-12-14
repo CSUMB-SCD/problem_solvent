@@ -42,8 +42,7 @@ class SolutionModelTest(TestCase):
         solution.text = "Try using dynamite"
         solution.date = timezone.now()
         solution.owner = self.user
-        solution.likes = 0
-        
+
         solution.save()
         
     def test_solution_str(self):

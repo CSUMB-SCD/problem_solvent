@@ -37,7 +37,6 @@ class Category(models.Model):
 
 class Post(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    likes = models.IntegerField()
     problem = models.ForeignKey('Problem', on_delete=models.SET_NULL, null=True)
     date = models.DateTimeField()
     text = models.CharField(max_length=280)
