@@ -30,9 +30,9 @@
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
 
         <h2 class="stats">
-            35 statements &nbsp;
+            36 statements &nbsp;
             <span class="run hide_run shortkey_r button_toggle_run">4 run</span>
-            <span class="mis shortkey_m button_toggle_mis">31 missing</span>
+            <span class="mis shortkey_m button_toggle_mis">32 missing</span>
             <span class="exc shortkey_x button_toggle_exc">0 excluded</span>
 
             
@@ -120,10 +120,11 @@
 <p id="n51" class="stm mis"><a href="#n51">51</a></p>
 <p id="n52" class="stm mis"><a href="#n52">52</a></p>
 <p id="n53" class="stm mis"><a href="#n53">53</a></p>
-<p id="n54" class="pln"><a href="#n54">54</a></p>
-<p id="n55" class="stm mis"><a href="#n55">55</a></p>
+<p id="n54" class="stm mis"><a href="#n54">54</a></p>
+<p id="n55" class="pln"><a href="#n55">55</a></p>
 <p id="n56" class="stm mis"><a href="#n56">56</a></p>
 <p id="n57" class="stm mis"><a href="#n57">57</a></p>
+<p id="n58" class="stm mis"><a href="#n58">58</a></p>
 
             </td>
             <td class="text">
@@ -147,7 +148,7 @@
 <p id="t18" class="pln">    <span class="com"># description string</span><span class="strut">&nbsp;</span></p>
 <p id="t19" class="stm mis">    <span class="nam">description</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">CharField</span><span class="op">(</span><span class="nam">max_length</span><span class="op">=</span><span class="num">500</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t20" class="pln">    <span class="com"># long description</span><span class="strut">&nbsp;</span></p>
-<p id="t21" class="stm mis">    <span class="nam">long_description</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">CharField</span><span class="op">(</span><span class="nam">max_length</span><span class="op">=</span><span class="num">1500</span><span class="op">,</span> <span class="nam">default</span><span class="op">=</span><span class="str">"Description not added."</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t21" class="stm mis">    <span class="nam">long_description</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">CharField</span><span class="op">(</span><span class="nam">max_length</span><span class="op">=</span><span class="num">1500</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t22" class="pln">    <span class="com"># points possible int</span><span class="strut">&nbsp;</span></p>
 <p id="t23" class="stm mis">    <span class="nam">points</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">IntegerField</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t24" class="pln">    <span class="com"># category int relating to another table, (engineering, business, software, etc.)</span><span class="strut">&nbsp;</span></p>
@@ -180,10 +181,11 @@
 <p id="t51" class="stm mis"><span class="key">class</span> <span class="nam">Solution</span><span class="op">(</span><span class="nam">Post</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t52" class="stm mis">    <span class="nam">models</span><span class="op">.</span><span class="nam">OneToOneField</span><span class="op">(</span><span class="nam">to</span><span class="op">=</span><span class="nam">Post</span><span class="op">,</span> <span class="nam">parent_link</span><span class="op">=</span><span class="key">True</span><span class="op">,</span> <span class="nam">related_name</span><span class="op">=</span><span class="str">"parent_post_solution"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t53" class="stm mis">    <span class="nam">isChosen</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">BooleanField</span><span class="op">(</span><span class="nam">default</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t54" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t55" class="stm mis"><span class="key">class</span> <span class="nam">Comment</span><span class="op">(</span><span class="nam">Post</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t56" class="stm mis">    <span class="nam">models</span><span class="op">.</span><span class="nam">OneToOneField</span><span class="op">(</span><span class="nam">to</span><span class="op">=</span><span class="nam">Post</span><span class="op">,</span> <span class="nam">parent_link</span><span class="op">=</span><span class="key">True</span><span class="op">,</span> <span class="nam">related_name</span><span class="op">=</span><span class="str">"parent_post_comment"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t57" class="stm mis">    <span class="nam">hidden</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">BooleanField</span><span class="op">(</span><span class="nam">default</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t54" class="stm mis">    <span class="nam">image</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">ImageField</span><span class="op">(</span><span class="nam">upload_to</span> <span class="op">=</span> <span class="str">'media/_uploads/'</span><span class="op">,</span> <span class="nam">blank</span><span class="op">=</span><span class="key">True</span><span class="op">,</span> <span class="nam">default</span><span class="op">=</span><span class="key">None</span><span class="op">,</span> <span class="nam">null</span><span class="op">=</span><span class="key">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t55" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t56" class="stm mis"><span class="key">class</span> <span class="nam">Comment</span><span class="op">(</span><span class="nam">Post</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t57" class="stm mis">    <span class="nam">models</span><span class="op">.</span><span class="nam">OneToOneField</span><span class="op">(</span><span class="nam">to</span><span class="op">=</span><span class="nam">Post</span><span class="op">,</span> <span class="nam">parent_link</span><span class="op">=</span><span class="key">True</span><span class="op">,</span> <span class="nam">related_name</span><span class="op">=</span><span class="str">"parent_post_comment"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t58" class="stm mis">    <span class="nam">hidden</span> <span class="op">=</span> <span class="nam">models</span><span class="op">.</span><span class="nam">BooleanField</span><span class="op">(</span><span class="nam">default</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -194,7 +196,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.2</a>,
-            created at 2017-12-13 23:37
+            created at 2017-12-14 07:18
         </p>
     </div>
 </div>

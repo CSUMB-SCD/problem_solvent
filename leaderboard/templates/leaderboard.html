@@ -41,7 +41,6 @@
 													<th>Avatar</th>
 													<th>Organization</th>
 													<th>Points</th>
-													
 												</tr>
 											</thead>
 											<tbody>
@@ -77,6 +76,7 @@
 												<tr>
 													<th>Rank</th>
 													<th>Name</th>
+													<th>Logo</th>
 													<th>Points</th>
 													
 												</tr>
@@ -86,7 +86,13 @@
 												<tr>
 													<td>{{ org.rank }}</td>
 													<td>{{ org.name }}</td>
+													{% if org.image %}
+													<td><img style="max-width:50px;max-height:50px;" src="{{ org.image.url }}"></td>
+													{% else %}
+													<td><img style="max-width:50px;max-height:50px;" src="/media/_uploads/avatar.jpg"></td>
+													{% endif %}
 													<td>{{ org.points }}</td>
+													
 												</tr>
 												 {% endfor %}
 												
@@ -108,7 +114,6 @@
 
 			<!-- Footer -->
 			{% include "footer.html" %}
-
 		</div>
 
 		<!-- scripts -->

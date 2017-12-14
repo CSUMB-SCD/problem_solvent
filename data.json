@@ -1,0 +1,828 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$Y3fW2P6JnlKF$68zCI+AVmNrE9MzGl6NQ8UW44QBcHJiKL0I//sZgnQg=",
+        "last_login": "2017-12-14T01:18:31.481Z",
+        "is_superuser": true,
+        "username": "prob_solv",
+        "first_name": "Nigel",
+        "last_name": "Hardy",
+        "email": "nhardy@csumb.edu",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-01T00:11:21.286Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$NtyxLvP31wQ5$aCxL8EnpRBVQu8IRUrqX+MoC8T2tqznzfYl+0dwt4ro=",
+        "last_login": "2017-12-03T04:24:55.816Z",
+        "is_superuser": false,
+        "username": "test_user",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-11-04T18:30:51.089Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$Klyj3fh0uSqP$62UrpcfQyZujQYFPaLYqUNM2xJF6K50xfGVILZo3OA4=",
+        "last_login": "2017-11-26T21:29:48.634Z",
+        "is_superuser": false,
+        "username": "Nigel",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-11-24T21:00:08.547Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$gda4z0oJUibS$lVrs/Vpz2iREVdSropqfbAzCfaeqk2aXFmYdostbNQo=",
+        "last_login": "2017-11-26T06:52:18.949Z",
+        "is_superuser": false,
+        "username": "TonyTheTiger",
+        "first_name": "",
+        "last_name": "",
+        "email": "nhardy@csumb.edu",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-11-26T02:34:37.711Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+        "password": "!MhWvzdy9ZNexMSboay0BZg8ac1UaLbAwtjJykand",
+        "last_login": "2017-12-05T04:12:03.778Z",
+        "is_superuser": false,
+        "username": "mgorbea",
+        "first_name": "Meya",
+        "last_name": "Gorbea",
+        "email": "mgorbea@csumb.edu",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-03T20:19:08.421Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+        "password": "!CNchdZLki5KSF2xahLaPHnGfTcNljpjvaQN5uuCH",
+        "last_login": "2017-12-03T20:51:56.351Z",
+        "is_superuser": false,
+        "username": "gwcmonterey",
+        "first_name": "GWC",
+        "last_name": "Monterey",
+        "email": "gwcmonterey@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-03T20:51:56.328Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+        "password": "!VCtiQDigCBqIi4qPbvXDryaO3DIiRILqHbdfUjyS",
+        "last_login": "2017-12-06T02:18:51.567Z",
+        "is_superuser": false,
+        "username": "manny42g",
+        "first_name": "Manuel",
+        "last_name": "Gonzalez",
+        "email": "manny42g@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-03T20:59:41.913Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+        "password": "!hyFv3NSBcTcBUhFZhEMjybeZLUWUnycOnsyV8ZqV",
+        "last_login": "2017-12-04T21:30:59.925Z",
+        "is_superuser": false,
+        "username": "nigeljames.12",
+        "first_name": "Nigel",
+        "last_name": "Hardy",
+        "email": "nigeljames.12@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-12-04T21:30:59.895Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "55j38ocim5k42jce0t9yl6yaz4u26vdm",
+    "fields": {
+        "session_data": "ZmM1MzJkNDU5OWNlYzY1OTA5MDA2YjUyNWY3YzAzMDJhN2E0MDMxOTp7Imdvb2dsZS1vYXV0aDJfc3RhdGUiOiI2YmdrYmg2OW92dmExek9ramtZSkJuYkxMUkNUblh6ciIsInNvY2lhbF9hdXRoX2xhc3RfbG9naW5fYmFja2VuZCI6Imdvb2dsZS1vYXV0aDIiLCJfYXV0aF91c2VyX2lkIjoiMTYiLCJfYXV0aF91c2VyX2hhc2giOiJkNGJiYWQ2ODMwOWE5M2NkNGQ3MjA2Y2IwZjVjNTE3M2YxMDQzNjgyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoic29jaWFsX2NvcmUuYmFja2VuZHMuZ29vZ2xlLkdvb2dsZU9BdXRoMiJ9",
+        "expire_date": "2017-12-20T02:18:51.574Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bei35hpnm2qkawisoklf20tbj6ft86cy",
+    "fields": {
+        "session_data": "MGE1YTdkZDM5Njg5ZmZmNjJhNzdjM2Q2NmVkNzliN2E3NTQ4MzMwNDp7Imdvb2dsZS1vYXV0aDJfc3RhdGUiOiJMNUl6SVl0ZFZ5M2ppODZVaVlKT3h5TEFvZVBlMVZJRSIsInNvY2lhbF9hdXRoX2xhc3RfbG9naW5fYmFja2VuZCI6Imdvb2dsZS1vYXV0aDIiLCJfYXV0aF91c2VyX2lkIjoiMTYiLCJfYXV0aF91c2VyX2hhc2giOiJkNGJiYWQ2ODMwOWE5M2NkNGQ3MjA2Y2IwZjVjNTE3M2YxMDQzNjgyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoic29jaWFsX2NvcmUuYmFja2VuZHMuZ29vZ2xlLkdvb2dsZU9BdXRoMiJ9",
+        "expire_date": "2017-12-20T01:26:03.208Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn0f7d24e43b392ce41c7f8ba255e71",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:07:22.098Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn12e13fdc155f8702483d8818c499c",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:06:00.947Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn17337417693e9f966592921a00004",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:07:39.950Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn17bcfb46c030d2b66e2d675f401b6",
+    "fields": {
+        "session_data": "N2FlNmEwYzhhNTI2NWIyNzY0MGEzZmYxNDMyODIyN2UzMWRmMTI4Njp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9oYXNoIjoiZDBmOWMyOGM2OTUzNmZlODk5MGExNWE1Yjc0MjA4NWVjOGY1NjA2OCIsInJvb21zIjpbXSwiX2F1dGhfdXNlcl9iYWNrZW5kIjoic29jaWFsX2NvcmUuYmFja2VuZHMuZ29vZ2xlLkdvb2dsZU9BdXRoMiJ9",
+        "expire_date": "2017-12-28T00:52:40.216Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn299d15388c1c0ed3616ec7b27a0ae",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T00:59:57.410Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn3471eeaacc076076cdfb81478a6d1",
+    "fields": {
+        "session_data": "NDIyNTIyNTMxMTIxZGQxN2UxNWNiMmNlZWFhNTQzMDNmNGQ1MzExYzp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6W10sInVzZXIiOiJwcm9iX3NvbHYifQ==",
+        "expire_date": "2017-12-28T00:58:09.603Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn585f63ffcbf3ba0d461db0b895f94",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:14:01.537Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn6644c874cdf4cd51327bc9dadf762",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:07:19.958Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn712ced987195f34e1dec4588e165f",
+    "fields": {
+        "session_data": "M2ExZTBlYWVlYzIzNGQwNDQwNzBiMDY0NjY1YmJjNjNkYTMzNzMzNDp7Il9hdXRoX3VzZXJfaGFzaCI6ImQwZjljMjhjNjk1MzZmZTg5OTBhMTVhNWI3NDIwODVlYzhmNTYwNjgiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJzb2NpYWxfY29yZS5iYWNrZW5kcy5nb29nbGUuR29vZ2xlT0F1dGgyIiwicm9vbXMiOlsxXSwidXNlciI6IlRpbW15IiwiX2F1dGhfdXNlcl9pZCI6IjEifQ==",
+        "expire_date": "2017-12-28T00:55:00.566Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn717cd0ef4edb88a4f75515383316f",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:13:17.271Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn72221b829bf28c7f936f99f7ce824",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T00:57:42.652Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn74fb5506ef205cdbe0b2d9f383a92",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:10:43.778Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn8469c4dee5531df37ac55a211d174",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:12:31.634Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn90282cb83d2462c1e2eba9f294e40",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:13:28.628Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn905df5b5fcdf914604add884a2ca5",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:08:01.404Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn9210a82b784960cb8853a7c568663",
+    "fields": {
+        "session_data": "YTExNzJjNzRiOTU5MjA3NGNkNTRhYzUwMzAzMjFhZjk4OGEwN2E3Mjp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJyb29tcyI6WzFdLCJfYXV0aF91c2VyX2lkIjoiMSIsInVzZXIiOiJUaW1teSIsIl9hdXRoX3VzZXJfaGFzaCI6ImQwZjljMjhjNjk1MzZmZTg5OTBhMTVhNWI3NDIwODVlYzhmNTYwNjgifQ==",
+        "expire_date": "2017-12-28T00:55:36.602Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chn9c978853297cffecfe6df7cc9aef0",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:06:16.967Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chna5a39f2027735c6d555e38edd5c08",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:06:08.260Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnb55817e7f2f1480b4529fef378ab3",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:10:46.733Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnb705b82b8cbf8751045d1cc825f15",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:08:54.527Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnb99d9db124a24fa0158532df01d65",
+    "fields": {
+        "session_data": "YmM1NmZkZjUzNzI5M2Q3MTEyYzY5NzJjYTU3MWY5YzVjYzZmZWU1YTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfaGFzaCI6ImQwZjljMjhjNjk1MzZmZTg5OTBhMTVhNWI3NDIwODVlYzhmNTYwNjgiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T06:51:49.517Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnbe1a28e244f9167c6ca3f299a4c58",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:13:51.830Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chncc6fe9b4b128d5b0ff2411cf9e4bd",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:06:22.357Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chncc904d745cd6301a44abc7dec20a9",
+    "fields": {
+        "session_data": "YTExNzJjNzRiOTU5MjA3NGNkNTRhYzUwMzAzMjFhZjk4OGEwN2E3Mjp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJyb29tcyI6WzFdLCJfYXV0aF91c2VyX2lkIjoiMSIsInVzZXIiOiJUaW1teSIsIl9hdXRoX3VzZXJfaGFzaCI6ImQwZjljMjhjNjk1MzZmZTg5OTBhMTVhNWI3NDIwODVlYzhmNTYwNjgifQ==",
+        "expire_date": "2017-12-28T00:55:32.430Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chndd48da1c56e81aaa8e32b217704ff",
+    "fields": {
+        "session_data": "MDUzMGEyNTg3NTJlZGYxM2Y5OTZmN2E1ODFmYThmNTU1Y2FjNTliZDp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJyb29tcyI6WzFdLCJfYXV0aF91c2VyX2lkIjoiMSIsInVzZXIiOiJwcm9iX3NvbHYiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4In0=",
+        "expire_date": "2017-12-28T00:57:35.444Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chne8866f24dd177d60256db08f9aa39",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:07:48.317Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chneae4bd39ec90a56bce3e4e179a79e",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:05:42.705Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnef695000a73663e803d4c54295ccd",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:06:01.993Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnf088579e44d0d34419caa8a2071a2",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:04:11.878Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnf146d7cb0407c7757c1ec5f2f13ee",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:06:25.777Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnf227d9724c69f3a0eee84b1dfafd8",
+    "fields": {
+        "session_data": "MDUzMGEyNTg3NTJlZGYxM2Y5OTZmN2E1ODFmYThmNTU1Y2FjNTliZDp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJyb29tcyI6WzFdLCJfYXV0aF91c2VyX2lkIjoiMSIsInVzZXIiOiJwcm9iX3NvbHYiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4In0=",
+        "expire_date": "2017-12-28T00:57:02.900Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnfad68c6fb6372beeaee2f1d103a6e",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:18:19.376Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnfb7e35ede691721f146f9f5ed28d3",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:09:08.557Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "chnfe6d652dd0a7d2cbba74246c94308",
+    "fields": {
+        "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T01:09:24.252Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "j2osmcryd7z543a1lfftdaw8saiihh00",
+    "fields": {
+        "session_data": "YzEyNjY2ZTNjMzJkZTI4NDYwZGE5YmZiYzQzN2NiOGE1ZDZlOTA4OTp7Imdvb2dsZS1vYXV0aDJfc3RhdGUiOiI0R2ZyMDhuQmoxT2x3M2NaT0JBWjg4VkpFMVoyNFZSeCIsInNvY2lhbF9hdXRoX2xhc3RfbG9naW5fYmFja2VuZCI6Imdvb2dsZS1vYXV0aDIiLCJfYXV0aF91c2VyX2lkIjoiMTQiLCJfYXV0aF91c2VyX2hhc2giOiI3YmI5NzJmOTI1YzIzNDUzOWU1MzQwZmIwZjI4YWNjMTk5N2QzNTFmIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoic29jaWFsX2NvcmUuYmFja2VuZHMuZ29vZ2xlLkdvb2dsZU9BdXRoMiJ9",
+        "expire_date": "2017-12-19T04:12:03.781Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qhzi6k83i7m8snpfv8nbo4bnf3tchk7n",
+    "fields": {
+        "session_data": "OGEwYWI4NGQzOTM2NzMzZjdmMjgxYzI5Yzk1ZTljZjlmODk0OWZmNjp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJnb29nbGUtb2F1dGgyX3N0YXRlIjoieFUzUTRuUFVmdmNCaXlxb0p1UEpmRGxCRG1TZnh3MlMiLCJfYXV0aF91c2VyX2lkIjoiMSIsInNvY2lhbF9hdXRoX2xhc3RfbG9naW5fYmFja2VuZCI6Imdvb2dsZS1vYXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4In0=",
+        "expire_date": "2017-12-28T01:18:31.485Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qr4h00mey7k2wv5z2ht52rpg865dyv5z",
+    "fields": {
+        "session_data": "YTVmNWYwNjZkZTNhYmMzZmI2Y2U5ZjU0MjQyNjk1MGQ1OWUyZDEwYzp7Il9hdXRoX3VzZXJfaGFzaCI6IjFjMWM4NDJlNjY0NTUxNWEzMjgyNWU4ZmYxNjI5YzJhMDIyMDgyNzMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJzb2NpYWxfY29yZS5iYWNrZW5kcy5nb29nbGUuR29vZ2xlT0F1dGgyIiwiZ29vZ2xlLW9hdXRoMl9zdGF0ZSI6IjM1M3NuSGxlRFdjTFA5b2NQSUZxcE80YWNGSjdaMG5DIiwic29jaWFsX2F1dGhfbGFzdF9sb2dpbl9iYWNrZW5kIjoiZ29vZ2xlLW9hdXRoMiIsIl9hdXRoX3VzZXJfaWQiOiIxNyJ9",
+        "expire_date": "2017-12-18T21:30:59.930Z"
+    }
+},
+{
+    "model": "chat_ws.room",
+    "pk": 1,
+    "fields": {
+        "title": "Public Chat Room",
+        "staff_only": false
+    }
+},
+{
+    "model": "problems.problem",
+    "pk": 21,
+    "fields": {
+        "title": "Sewage Leak Problem",
+        "owner": [
+            "prob_solv"
+        ],
+        "created": "2017-12-04T21:16:16.939Z",
+        "isSolved": true,
+        "user_solved": null,
+        "description": "We have had frequent sewage leaks that have been contaminating our water supply.  We will not have the resources to be able to reduce the leaks significantly, but we would like to be able to warn our citizens about the problem.",
+        "long_description": "We have had frequent sewage leaks that have been contaminating our water supply.  We will not have the resources to be able to reduce the leaks significantly, but we would like to be able to warn our citizens about the problem.",
+        "points": 10,
+        "category": 1,
+        "image": "media/_uploads/sewage.png"
+    }
+},
+{
+    "model": "problems.problem",
+    "pk": 22,
+    "fields": {
+        "title": "Water Purifier",
+        "owner": [
+            "manny42g"
+        ],
+        "created": "2017-12-06T01:26:42.772Z",
+        "isSolved": false,
+        "user_solved": null,
+        "description": "Clean water is scarce in my part of the country. We either have to travel 10+ miles for a clean water source and without a way of transporting huge amounts, we must manage with what we can carry.",
+        "long_description": "Clean water is scarce in my part of the country. We either have to travel 10+ miles for a clean water source and without a way of transporting huge amounts, we must manage with what we can carry. I need help purifying the water from a lake that is closer to us. This purifier must be able to purify at least 2 gallons per day.",
+        "points": 5,
+        "category": 1,
+        "image": "media/_uploads/Purity.png"
+    }
+},
+{
+    "model": "problems.problem",
+    "pk": 23,
+    "fields": {
+        "title": "Surveillance Camera",
+        "owner": [
+            "TonyTheTiger"
+        ],
+        "created": "2017-12-14T06:59:17Z",
+        "isSolved": false,
+        "user_solved": null,
+        "description": "We have had a problem with thieves breaking into government buildings and stealing various items. We need something that will be a deterrent and help catch these criminals in the act.",
+        "long_description": "We have had a problem with thieves breaking into government buildings and stealing various items. We need something that will be a deterrent and help catch these criminals in the act.",
+        "points": 5,
+        "category": 3,
+        "image": "media/_uploads/ts-623_main_ne.jpg"
+    }
+},
+{
+    "model": "problems.problem",
+    "pk": 24,
+    "fields": {
+        "title": "Food Choice Awareness",
+        "owner": [
+            "mgorbea"
+        ],
+        "created": "2017-12-14T07:02:50Z",
+        "isSolved": true,
+        "user_solved": null,
+        "description": "Our community is plagued with cheap food that is high in calories and causing an obesity epidemic. We would like to start a program in local schools that helps teach kids to eat healthy.",
+        "long_description": "Our community is plagued with cheap food that is high in calories and causing an obesity epidemic. We would like to start a program in local schools that helps teach kids to eat healthy.",
+        "points": 8,
+        "category": 5,
+        "image": "media/_uploads/burger-and-fries.jpg"
+    }
+},
+{
+    "model": "problems.problem",
+    "pk": 25,
+    "fields": {
+        "title": "Lead Removal",
+        "owner": [
+            "prob_solv"
+        ],
+        "created": "2017-12-14T07:05:31.105Z",
+        "isSolved": false,
+        "user_solved": null,
+        "description": "We need a way to detect lead paint and then remove it so that children are not exposed to it. We have a lot of older buildings that have a high potential to negatively impact the children of the community.",
+        "long_description": "We need a way to detect lead paint and then remove it so that children are not exposed to it. We have a lot of older buildings that have a high potential to negatively impact the children of the community.",
+        "points": 10,
+        "category": 1,
+        "image": "media/_uploads/Peeling_paint_6.jpg"
+    }
+},
+{
+    "model": "problems.problem",
+    "pk": 26,
+    "fields": {
+        "title": "Cheap Laptops for Students",
+        "owner": [
+            "Nigel"
+        ],
+        "created": "2017-12-14T07:09:08Z",
+        "isSolved": false,
+        "user_solved": null,
+        "description": "We need to buy laptops for a group of children ages 10-14. We need help purchasing and setting up the computers. We plan on providing courses that teach computer science, web development, and graphic design.",
+        "long_description": "We need to buy laptops for a group of children ages 10-14. We need help purchasing and setting up the computers. We plan on providing courses that teach computer science, web development, and graphic design.",
+        "points": 6,
+        "category": 5,
+        "image": "media/_uploads/kids-computers-537x358.jpg"
+    }
+},
+{
+    "model": "problems.category",
+    "pk": 1,
+    "fields": {
+        "name": "Engineering"
+    }
+},
+{
+    "model": "problems.category",
+    "pk": 2,
+    "fields": {
+        "name": "Business"
+    }
+},
+{
+    "model": "problems.category",
+    "pk": 3,
+    "fields": {
+        "name": "Software"
+    }
+},
+{
+    "model": "problems.category",
+    "pk": 4,
+    "fields": {
+        "name": "Mathematics"
+    }
+},
+{
+    "model": "problems.category",
+    "pk": 5,
+    "fields": {
+        "name": "Education"
+    }
+},
+{
+    "model": "problems.solution",
+    "pk": 26,
+    "fields": {
+        "owner": [
+            "nigeljames.12"
+        ],
+        "likes": 0,
+        "problem": 21,
+        "date": "2017-12-04T21:31:57.823Z",
+        "text": "You could place sensors at the source of the water supply and check for contamination rather than checking for leaks.",
+        "isChosen": true,
+        "image": ""
+    }
+},
+{
+    "model": "problems.solution",
+    "pk": 27,
+    "fields": {
+        "owner": [
+            "prob_solv"
+        ],
+        "likes": 0,
+        "problem": 22,
+        "date": "2017-12-13T23:23:38Z",
+        "text": "Try a carbon filter",
+        "isChosen": true,
+        "image": ""
+    }
+},
+{
+    "model": "problems.solution",
+    "pk": 32,
+    "fields": {
+        "owner": [
+            "prob_solv"
+        ],
+        "likes": 0,
+        "problem": 24,
+        "date": "2017-12-14T07:14:52Z",
+        "text": "You could design a mobile game that requires food facts to complete.",
+        "isChosen": true,
+        "image": ""
+    }
+},
+{
+    "model": "account.organization",
+    "pk": 1,
+    "fields": {
+        "name": "CSUMB",
+        "points": 18,
+        "rank": 1,
+        "image": "media/_uploads/csumb.png"
+    }
+},
+{
+    "model": "account.organization",
+    "pk": 2,
+    "fields": {
+        "name": "Hartnell",
+        "points": 0,
+        "rank": 2,
+        "image": "media/_uploads/hartnell.png"
+    }
+},
+{
+    "model": "account.organization",
+    "pk": 3,
+    "fields": {
+        "name": "MPC",
+        "points": 0,
+        "rank": 2,
+        "image": "media/_uploads/mpc.png"
+    }
+},
+{
+    "model": "account.profile",
+    "pk": 1,
+    "fields": {
+        "points": 8,
+        "rank": 2,
+        "org_rank": 0,
+        "organization": 1,
+        "image": "media/_uploads/village_nw2WQ3o.jpg",
+        "credential": null
+    }
+},
+{
+    "model": "account.profile",
+    "pk": 2,
+    "fields": {
+        "points": 0,
+        "rank": 3,
+        "org_rank": 0,
+        "organization": 3,
+        "image": "",
+        "credential": null
+    }
+},
+{
+    "model": "account.profile",
+    "pk": 11,
+    "fields": {
+        "points": 0,
+        "rank": 3,
+        "org_rank": 0,
+        "organization": 2,
+        "image": "",
+        "credential": "IiI="
+    }
+},
+{
+    "model": "account.profile",
+    "pk": 13,
+    "fields": {
+        "points": 0,
+        "rank": 3,
+        "org_rank": -1,
+        "organization": 3,
+        "image": "",
+        "credential": "IiI="
+    }
+},
+{
+    "model": "account.profile",
+    "pk": 14,
+    "fields": {
+        "points": 0,
+        "rank": 3,
+        "org_rank": 0,
+        "organization": 1,
+        "image": "",
+        "credential": "IiI="
+    }
+},
+{
+    "model": "account.profile",
+    "pk": 16,
+    "fields": {
+        "points": 0,
+        "rank": 3,
+        "org_rank": 0,
+        "organization": 1,
+        "image": "media/_uploads/turtle.jpg",
+        "credential": null
+    }
+},
+{
+    "model": "account.profile",
+    "pk": 17,
+    "fields": {
+        "points": 10,
+        "rank": 1,
+        "org_rank": 0,
+        "organization": 1,
+        "image": "",
+        "credential": null
+    }
+},
+{
+    "model": "social_django.usersocialauth",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "mgorbea"
+        ],
+        "provider": "google-oauth2",
+        "uid": "mgorbea@csumb.edu",
+        "extra_data": "{\"access_token\": \"ya29.GlwZBU8O_awLDPJVa0LNr0Itat683-ZeXw3Dy6v4dbwvD1pXKTbDf2N74EYfrEmCgdo_dIsJw0Kw4qn6je_Hwe1DWEJjMmBMFV1J9fRArCfu_qgltZsPzZsvd3EaXQ\", \"token_type\": \"Bearer\", \"expires\": 3600, \"auth_time\": 1512447123}"
+    }
+},
+{
+    "model": "social_django.usersocialauth",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "gwcmonterey"
+        ],
+        "provider": "google-oauth2",
+        "uid": "gwcmonterey@gmail.com",
+        "extra_data": "{\"access_token\": \"ya29.GlsXBeMrFmyCm4QXMgk5GK7yFVEIGh5Ve5sc0fug7S0IfsjD3xKbFO0UrAgGVpClcOqhH57MKKe2ARASILWT0T1Olfm50VisLii_AqO0oINwrhjDCpcJ29dT3bp9\", \"token_type\": \"Bearer\", \"auth_time\": 1512334316, \"expires\": 3600}"
+    }
+},
+{
+    "model": "social_django.usersocialauth",
+    "pk": 3,
+    "fields": {
+        "user": [
+            "prob_solv"
+        ],
+        "provider": "google-oauth2",
+        "uid": "nhardy@csumb.edu",
+        "extra_data": "{\"access_token\": \"ya29.GlwiBUfCZIi_xIQ1dFNiZaI8wg3NEA9hLFaVDJ56uBT77ak0dJUb9Qfo7p_fE3HBZm0tiBvM5HnVb5LsTNVcMNOFLJiBFXbtKcFhhORED9nanJZVu2dMMEYpZjGGmg\", \"token_type\": \"Bearer\", \"auth_time\": 1513214311, \"expires\": 3599}"
+    }
+},
+{
+    "model": "social_django.usersocialauth",
+    "pk": 4,
+    "fields": {
+        "user": [
+            "manny42g"
+        ],
+        "provider": "google-oauth2",
+        "uid": "manny42g@gmail.com",
+        "extra_data": "{\"access_token\": \"ya29.GlwaBadcCwXiY6w8RtB51hbFZXB0OJN1QHPNapBByj4k_n8b0mv1JpjkoZ0HxQ_Q3HxisToCx6PQdsKZqnmgKK-G6FTIKPkLm8XbLgh7t0Ks9onKG1Zs-KnFB2zh2Q\", \"token_type\": \"Bearer\", \"expires\": 3600, \"auth_time\": 1512526731}"
+    }
+},
+{
+    "model": "social_django.usersocialauth",
+    "pk": 5,
+    "fields": {
+        "user": [
+            "nigeljames.12"
+        ],
+        "provider": "google-oauth2",
+        "uid": "nigeljames.12@gmail.com",
+        "extra_data": "{\"access_token\": \"ya29.GlsYBX9W0xZrdvzLw7G8cqUzUZDCjs0fg0IK-tYxc5fMSlv7gJPHLK3YkcyhenNIU0YmIjtjOylzGnQ4XTYXDMGSI7Z0DWOirHIve5_4JfkaqCj2tnU0Ypuao0LO\", \"token_type\": \"Bearer\", \"auth_time\": 1512423059, \"expires\": 3600}"
+    }
+}
+]

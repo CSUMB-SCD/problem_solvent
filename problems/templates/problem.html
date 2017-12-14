@@ -26,7 +26,7 @@
 								<h4>Author: {{ problem.owner.username }}</h4>
 								<h4>Category: {{ problem.category.name }}</h4>
 								<h4>{{ problem.points }} Points</h4>
-								<p>{{ problem.description }}
+								<p>{{ problem.long_description }}
 								</p>
 								{% if problem.owner == user %}
 								<a href='/editproblem/{{ problem.id }}/'>Edit Problem</a>
@@ -72,8 +72,12 @@
 						<div class="row">
 							<div class="12u">
 								<h3><a href='/account/{{ solution.owner.id }}/'>{{ solution.owner.username }}</a></h3>
+								{% if solution.image %}
+								<img style="max-width:400px;max-height:500px;" src="{{ solution.image.url }}">
+								{% endif %}
 								<p>{{ solution.text }}
 								</p>
+								
 								{% if solution.isChosen %}
 								<p>Chosen solution!</p>
 								{% endif %}

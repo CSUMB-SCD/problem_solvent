@@ -16,11 +16,15 @@ class ProblemForm(forms.ModelForm):
     class Meta:
         model = Problem
         fields = ('title', 'description', 'long_description', 'category', 'points', 'image')
+        widgets = {
+            'description': forms.Textarea(attrs={'cols': 10, 'rows': 2}),
+            'long_description': forms.Textarea(attrs={'cols': 10, 'rows': 5}),
+        }
         
 class SolutionForm(forms.ModelForm):
     class Meta:
         model = Solution
-        fields = ('text',)
+        fields = ('text', 'image')
         widgets = {
             'text': forms.Textarea(attrs={'cols': 10, 'rows': 5}),
         }
@@ -38,7 +42,7 @@ class CommentForm(forms.ModelForm):
 
 # Create your views here.
 def index(request, page=1, solved=False):
-    posts_per_page = 10
+    posts_per_page = 4
     page = int(page) - 1
     start = page*posts_per_page
     end = start + posts_per_page
@@ -116,7 +120,7 @@ def delete_problem(request, id):
 @login_required(login_url="/login/")
 def solution(request, problem_id):
     if request.method == 'POST':
-        form = SolutionForm(request.POST)
+        form = SolutionForm(request.POST, request.FILES)
         if form.is_valid():
             solution = form.save(commit=False)
             solution.owner = request.user

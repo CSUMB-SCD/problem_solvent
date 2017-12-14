@@ -321,6 +321,14 @@
 },
 {
     "model": "sessions.session",
+    "pk": "chnb99d9db124a24fa0158532df01d65",
+    "fields": {
+        "session_data": "YmM1NmZkZjUzNzI5M2Q3MTEyYzY5NzJjYTU3MWY5YzVjYzZmZWU1YTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2lkIjoiMSIsIl9hdXRoX3VzZXJfaGFzaCI6ImQwZjljMjhjNjk1MzZmZTg5OTBhMTVhNWI3NDIwODVlYzhmNTYwNjgiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
+        "expire_date": "2017-12-28T06:51:49.517Z"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "chnbe1a28e244f9167c6ca3f299a4c58",
     "fields": {
         "session_data": "YjNiODQwNjUyMzk3ZWQ3MzRhZTZlNDY4MGVkNGE1ZDNkYmI0N2M2MTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InNvY2lhbF9jb3JlLmJhY2tlbmRzLmdvb2dsZS5Hb29nbGVPQXV0aDIiLCJfYXV0aF91c2VyX2hhc2giOiJkMGY5YzI4YzY5NTM2ZmU4OTkwYTE1YTViNzQyMDg1ZWM4ZjU2MDY4IiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJyb29tcyI6WzFdLCJ1c2VyIjoicHJvYl9zb2x2In0=",
@@ -492,6 +500,78 @@
     }
 },
 {
+    "model": "problems.problem",
+    "pk": 23,
+    "fields": {
+        "title": "Surveillance Camera",
+        "owner": [
+            "TonyTheTiger"
+        ],
+        "created": "2017-12-14T06:59:17Z",
+        "isSolved": false,
+        "user_solved": null,
+        "description": "We have had a problem with thieves breaking into government buildings and stealing various items. We need something that will be a deterrent and help catch these criminals in the act.",
+        "long_description": "We have had a problem with thieves breaking into government buildings and stealing various items. We need something that will be a deterrent and help catch these criminals in the act.",
+        "points": 5,
+        "category": 3,
+        "image": "media/_uploads/ts-623_main_ne.jpg"
+    }
+},
+{
+    "model": "problems.problem",
+    "pk": 24,
+    "fields": {
+        "title": "Food Choice Awareness",
+        "owner": [
+            "mgorbea"
+        ],
+        "created": "2017-12-14T07:02:50Z",
+        "isSolved": true,
+        "user_solved": null,
+        "description": "Our community is plagued with cheap food that is high in calories and causing an obesity epidemic. We would like to start a program in local schools that helps teach kids to eat healthy.",
+        "long_description": "Our community is plagued with cheap food that is high in calories and causing an obesity epidemic. We would like to start a program in local schools that helps teach kids to eat healthy.",
+        "points": 8,
+        "category": 5,
+        "image": "media/_uploads/burger-and-fries.jpg"
+    }
+},
+{
+    "model": "problems.problem",
+    "pk": 25,
+    "fields": {
+        "title": "Lead Removal",
+        "owner": [
+            "prob_solv"
+        ],
+        "created": "2017-12-14T07:05:31.105Z",
+        "isSolved": false,
+        "user_solved": null,
+        "description": "We need a way to detect lead paint and then remove it so that children are not exposed to it. We have a lot of older buildings that have a high potential to negatively impact the children of the community.",
+        "long_description": "We need a way to detect lead paint and then remove it so that children are not exposed to it. We have a lot of older buildings that have a high potential to negatively impact the children of the community.",
+        "points": 10,
+        "category": 1,
+        "image": "media/_uploads/Peeling_paint_6.jpg"
+    }
+},
+{
+    "model": "problems.problem",
+    "pk": 26,
+    "fields": {
+        "title": "Cheap Laptops for Students",
+        "owner": [
+            "Nigel"
+        ],
+        "created": "2017-12-14T07:09:08Z",
+        "isSolved": false,
+        "user_solved": null,
+        "description": "We need to buy laptops for a group of children ages 10-14. We need help purchasing and setting up the computers. We plan on providing courses that teach computer science, web development, and graphic design.",
+        "long_description": "We need to buy laptops for a group of children ages 10-14. We need help purchasing and setting up the computers. We plan on providing courses that teach computer science, web development, and graphic design.",
+        "points": 6,
+        "category": 5,
+        "image": "media/_uploads/kids-computers-537x358.jpg"
+    }
+},
+{
     "model": "problems.category",
     "pk": 1,
     "fields": {
@@ -537,7 +617,8 @@
         "problem": 21,
         "date": "2017-12-04T21:31:57.823Z",
         "text": "You could place sensors at the source of the water supply and check for contamination rather than checking for leaks.",
-        "isChosen": true
+        "isChosen": true,
+        "image": ""
     }
 },
 {
@@ -551,7 +632,23 @@
         "problem": 22,
         "date": "2017-12-13T23:23:38Z",
         "text": "Try a carbon filter",
-        "isChosen": true
+        "isChosen": true,
+        "image": ""
+    }
+},
+{
+    "model": "problems.solution",
+    "pk": 32,
+    "fields": {
+        "owner": [
+            "prob_solv"
+        ],
+        "likes": 0,
+        "problem": 24,
+        "date": "2017-12-14T07:14:52Z",
+        "text": "You could design a mobile game that requires food facts to complete.",
+        "isChosen": true,
+        "image": ""
     }
 },
 {
@@ -559,8 +656,9 @@
     "pk": 1,
     "fields": {
         "name": "CSUMB",
-        "points": 10,
-        "rank": 1
+        "points": 18,
+        "rank": 1,
+        "image": "media/_uploads/csumb.png"
     }
 },
 {
@@ -569,7 +667,8 @@
     "fields": {
         "name": "Hartnell",
         "points": 0,
-        "rank": 2
+        "rank": 2,
+        "image": "media/_uploads/hartnell.png"
     }
 },
 {
@@ -578,14 +677,15 @@
     "fields": {
         "name": "MPC",
         "points": 0,
-        "rank": 2
+        "rank": 2,
+        "image": "media/_uploads/mpc.png"
     }
 },
 {
     "model": "account.profile",
     "pk": 1,
     "fields": {
-        "points": 0,
+        "points": 8,
         "rank": 2,
         "org_rank": 0,
         "organization": 1,
@@ -598,7 +698,7 @@
     "pk": 2,
     "fields": {
         "points": 0,
-        "rank": 2,
+        "rank": 3,
         "org_rank": 0,
         "organization": 3,
         "image": "",
@@ -610,11 +710,11 @@
     "pk": 11,
     "fields": {
         "points": 0,
-        "rank": 2,
+        "rank": 3,
         "org_rank": 0,
-        "organization": 1,
+        "organization": 2,
         "image": "",
-        "credential": null
+        "credential": "IiI="
     }
 },
 {
@@ -622,11 +722,11 @@
     "pk": 13,
     "fields": {
         "points": 0,
-        "rank": 2,
+        "rank": 3,
         "org_rank": -1,
-        "organization": 1,
+        "organization": 3,
         "image": "",
-        "credential": null
+        "credential": "IiI="
     }
 },
 {
@@ -634,7 +734,7 @@
     "pk": 14,
     "fields": {
         "points": 0,
-        "rank": 2,
+        "rank": 3,
         "org_rank": 0,
         "organization": 1,
         "image": "",
@@ -646,7 +746,7 @@
     "pk": 16,
     "fields": {
         "points": 0,
-        "rank": 2,
+        "rank": 3,
         "org_rank": 0,
         "organization": 1,
         "image": "media/_uploads/turtle.jpg",
@@ -674,7 +774,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "mgorbea@csumb.edu",
-        "extra_data": "{\"token_type\": \"Bearer\", \"expires\": 3600, \"auth_time\": 1512447123, \"access_token\": \"ya29.GlwZBU8O_awLDPJVa0LNr0Itat683-ZeXw3Dy6v4dbwvD1pXKTbDf2N74EYfrEmCgdo_dIsJw0Kw4qn6je_Hwe1DWEJjMmBMFV1J9fRArCfu_qgltZsPzZsvd3EaXQ\"}"
+        "extra_data": "{\"expires\": 3600, \"token_type\": \"Bearer\", \"access_token\": \"ya29.GlwZBU8O_awLDPJVa0LNr0Itat683-ZeXw3Dy6v4dbwvD1pXKTbDf2N74EYfrEmCgdo_dIsJw0Kw4qn6je_Hwe1DWEJjMmBMFV1J9fRArCfu_qgltZsPzZsvd3EaXQ\", \"auth_time\": 1512447123}"
     }
 },
 {
@@ -686,7 +786,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "gwcmonterey@gmail.com",
-        "extra_data": "{\"access_token\": \"ya29.GlsXBeMrFmyCm4QXMgk5GK7yFVEIGh5Ve5sc0fug7S0IfsjD3xKbFO0UrAgGVpClcOqhH57MKKe2ARASILWT0T1Olfm50VisLii_AqO0oINwrhjDCpcJ29dT3bp9\", \"token_type\": \"Bearer\", \"auth_time\": 1512334316, \"expires\": 3600}"
+        "extra_data": "{\"access_token\": \"ya29.GlsXBeMrFmyCm4QXMgk5GK7yFVEIGh5Ve5sc0fug7S0IfsjD3xKbFO0UrAgGVpClcOqhH57MKKe2ARASILWT0T1Olfm50VisLii_AqO0oINwrhjDCpcJ29dT3bp9\", \"token_type\": \"Bearer\", \"expires\": 3600, \"auth_time\": 1512334316}"
     }
 },
 {
@@ -698,7 +798,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "nhardy@csumb.edu",
-        "extra_data": "{\"access_token\": \"ya29.GlwiBUfCZIi_xIQ1dFNiZaI8wg3NEA9hLFaVDJ56uBT77ak0dJUb9Qfo7p_fE3HBZm0tiBvM5HnVb5LsTNVcMNOFLJiBFXbtKcFhhORED9nanJZVu2dMMEYpZjGGmg\", \"token_type\": \"Bearer\", \"auth_time\": 1513214311, \"expires\": 3599}"
+        "extra_data": "{\"expires\": 3599, \"token_type\": \"Bearer\", \"access_token\": \"ya29.GlwiBUfCZIi_xIQ1dFNiZaI8wg3NEA9hLFaVDJ56uBT77ak0dJUb9Qfo7p_fE3HBZm0tiBvM5HnVb5LsTNVcMNOFLJiBFXbtKcFhhORED9nanJZVu2dMMEYpZjGGmg\", \"auth_time\": 1513214311}"
     }
 },
 {
@@ -710,7 +810,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "manny42g@gmail.com",
-        "extra_data": "{\"token_type\": \"Bearer\", \"expires\": 3600, \"auth_time\": 1512526731, \"access_token\": \"ya29.GlwaBadcCwXiY6w8RtB51hbFZXB0OJN1QHPNapBByj4k_n8b0mv1JpjkoZ0HxQ_Q3HxisToCx6PQdsKZqnmgKK-G6FTIKPkLm8XbLgh7t0Ks9onKG1Zs-KnFB2zh2Q\"}"
+        "extra_data": "{\"expires\": 3600, \"token_type\": \"Bearer\", \"access_token\": \"ya29.GlwaBadcCwXiY6w8RtB51hbFZXB0OJN1QHPNapBByj4k_n8b0mv1JpjkoZ0HxQ_Q3HxisToCx6PQdsKZqnmgKK-G6FTIKPkLm8XbLgh7t0Ks9onKG1Zs-KnFB2zh2Q\", \"auth_time\": 1512526731}"
     }
 },
 {
@@ -722,7 +822,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "nigeljames.12@gmail.com",
-        "extra_data": "{\"token_type\": \"Bearer\", \"auth_time\": 1512423059, \"expires\": 3600, \"access_token\": \"ya29.GlsYBX9W0xZrdvzLw7G8cqUzUZDCjs0fg0IK-tYxc5fMSlv7gJPHLK3YkcyhenNIU0YmIjtjOylzGnQ4XTYXDMGSI7Z0DWOirHIve5_4JfkaqCj2tnU0Ypuao0LO\"}"
+        "extra_data": "{\"access_token\": \"ya29.GlsYBX9W0xZrdvzLw7G8cqUzUZDCjs0fg0IK-tYxc5fMSlv7gJPHLK3YkcyhenNIU0YmIjtjOylzGnQ4XTYXDMGSI7Z0DWOirHIve5_4JfkaqCj2tnU0Ypuao0LO\", \"token_type\": \"Bearer\", \"expires\": 3600, \"auth_time\": 1512423059}"
     }
 }
 ]

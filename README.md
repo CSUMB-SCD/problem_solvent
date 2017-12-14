@@ -36,7 +36,7 @@ sudo service redis-server start
 
 ## Backup DB
 ### This will save it properly
-python manage.py dumpdata --natural-foreign --exclude auth.permission --exclude contenttypes --exclude logentry --indent 4 > data.json
+python manage.py dumpdata --natural-foreign --exclude auth.permission --exclude contenttypes --exclude admin.logentry --indent 4 > data.json
 
 ### Run with test db for checking with throw away db
 python manage.py testserver data_test.json --addrport 0:8080

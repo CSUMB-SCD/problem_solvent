@@ -18,7 +18,7 @@ class Problem(models.Model):
     # description string
     description = models.CharField(max_length=500)
     # long description
-    long_description = models.CharField(max_length=1500, default="Description not added.")
+    long_description = models.CharField(max_length=1500)
     # points possible int
     points = models.IntegerField()
     # category int relating to another table, (engineering, business, software, etc.)
@@ -51,6 +51,7 @@ class Post(models.Model):
 class Solution(Post):
     models.OneToOneField(to=Post, parent_link=True, related_name="parent_post_solution")
     isChosen = models.BooleanField(default=False)
+    image = models.ImageField(upload_to = 'media/_uploads/', blank=True, default=None, null=True)
 
 class Comment(Post):
     models.OneToOneField(to=Post, parent_link=True, related_name="parent_post_comment")
