@@ -543,12 +543,12 @@
         "owner": [
             "prob_solv"
         ],
-        "created": "2017-12-14T07:05:31.105Z",
-        "isSolved": false,
+        "created": "2017-12-14T07:05:31Z",
+        "isSolved": true,
         "user_solved": null,
         "description": "We need a way to detect lead paint and then remove it so that children are not exposed to it. We have a lot of older buildings that have a high potential to negatively impact the children of the community.",
         "long_description": "We need a way to detect lead paint and then remove it so that children are not exposed to it. We have a lot of older buildings that have a high potential to negatively impact the children of the community.",
-        "points": 10,
+        "points": 9,
         "category": 1,
         "image": "media/_uploads/Peeling_paint_6.jpg"
     }
@@ -652,6 +652,21 @@
     }
 },
 {
+    "model": "problems.solution",
+    "pk": 33,
+    "fields": {
+        "owner": [
+            "test_user"
+        ],
+        "likes": 0,
+        "problem": 25,
+        "date": "2017-12-14T07:21:25Z",
+        "text": "They make an add-on for mobile devices that can detect lead.",
+        "isChosen": true,
+        "image": ""
+    }
+},
+{
     "model": "account.organization",
     "pk": 1,
     "fields": {
@@ -667,7 +682,7 @@
     "fields": {
         "name": "Hartnell",
         "points": 0,
-        "rank": 2,
+        "rank": 3,
         "image": "media/_uploads/hartnell.png"
     }
 },
@@ -676,7 +691,7 @@
     "pk": 3,
     "fields": {
         "name": "MPC",
-        "points": 0,
+        "points": 9,
         "rank": 2,
         "image": "media/_uploads/mpc.png"
     }
@@ -686,7 +701,7 @@
     "pk": 1,
     "fields": {
         "points": 8,
-        "rank": 2,
+        "rank": 3,
         "org_rank": 0,
         "organization": 1,
         "image": "media/_uploads/village_nw2WQ3o.jpg",
@@ -697,8 +712,8 @@
     "model": "account.profile",
     "pk": 2,
     "fields": {
-        "points": 0,
-        "rank": 3,
+        "points": 9,
+        "rank": 2,
         "org_rank": 0,
         "organization": 3,
         "image": "",
@@ -710,7 +725,7 @@
     "pk": 11,
     "fields": {
         "points": 0,
-        "rank": 3,
+        "rank": 4,
         "org_rank": 0,
         "organization": 2,
         "image": "",
@@ -722,7 +737,7 @@
     "pk": 13,
     "fields": {
         "points": 0,
-        "rank": 3,
+        "rank": 4,
         "org_rank": -1,
         "organization": 3,
         "image": "",
@@ -734,7 +749,7 @@
     "pk": 14,
     "fields": {
         "points": 0,
-        "rank": 3,
+        "rank": 4,
         "org_rank": 0,
         "organization": 1,
         "image": "",
@@ -746,7 +761,7 @@
     "pk": 16,
     "fields": {
         "points": 0,
-        "rank": 3,
+        "rank": 4,
         "org_rank": 0,
         "organization": 1,
         "image": "media/_uploads/turtle.jpg",
@@ -774,7 +789,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "mgorbea@csumb.edu",
-        "extra_data": "{\"expires\": 3600, \"token_type\": \"Bearer\", \"access_token\": \"ya29.GlwZBU8O_awLDPJVa0LNr0Itat683-ZeXw3Dy6v4dbwvD1pXKTbDf2N74EYfrEmCgdo_dIsJw0Kw4qn6je_Hwe1DWEJjMmBMFV1J9fRArCfu_qgltZsPzZsvd3EaXQ\", \"auth_time\": 1512447123}"
+        "extra_data": "{\"auth_time\": 1512447123, \"token_type\": \"Bearer\", \"expires\": 3600, \"access_token\": \"ya29.GlwZBU8O_awLDPJVa0LNr0Itat683-ZeXw3Dy6v4dbwvD1pXKTbDf2N74EYfrEmCgdo_dIsJw0Kw4qn6je_Hwe1DWEJjMmBMFV1J9fRArCfu_qgltZsPzZsvd3EaXQ\"}"
     }
 },
 {
@@ -786,7 +801,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "gwcmonterey@gmail.com",
-        "extra_data": "{\"access_token\": \"ya29.GlsXBeMrFmyCm4QXMgk5GK7yFVEIGh5Ve5sc0fug7S0IfsjD3xKbFO0UrAgGVpClcOqhH57MKKe2ARASILWT0T1Olfm50VisLii_AqO0oINwrhjDCpcJ29dT3bp9\", \"token_type\": \"Bearer\", \"expires\": 3600, \"auth_time\": 1512334316}"
+        "extra_data": "{\"auth_time\": 1512334316, \"access_token\": \"ya29.GlsXBeMrFmyCm4QXMgk5GK7yFVEIGh5Ve5sc0fug7S0IfsjD3xKbFO0UrAgGVpClcOqhH57MKKe2ARASILWT0T1Olfm50VisLii_AqO0oINwrhjDCpcJ29dT3bp9\", \"expires\": 3600, \"token_type\": \"Bearer\"}"
     }
 },
 {
@@ -798,7 +813,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "nhardy@csumb.edu",
-        "extra_data": "{\"expires\": 3599, \"token_type\": \"Bearer\", \"access_token\": \"ya29.GlwiBUfCZIi_xIQ1dFNiZaI8wg3NEA9hLFaVDJ56uBT77ak0dJUb9Qfo7p_fE3HBZm0tiBvM5HnVb5LsTNVcMNOFLJiBFXbtKcFhhORED9nanJZVu2dMMEYpZjGGmg\", \"auth_time\": 1513214311}"
+        "extra_data": "{\"auth_time\": 1513214311, \"access_token\": \"ya29.GlwiBUfCZIi_xIQ1dFNiZaI8wg3NEA9hLFaVDJ56uBT77ak0dJUb9Qfo7p_fE3HBZm0tiBvM5HnVb5LsTNVcMNOFLJiBFXbtKcFhhORED9nanJZVu2dMMEYpZjGGmg\", \"expires\": 3599, \"token_type\": \"Bearer\"}"
     }
 },
 {
@@ -810,7 +825,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "manny42g@gmail.com",
-        "extra_data": "{\"expires\": 3600, \"token_type\": \"Bearer\", \"access_token\": \"ya29.GlwaBadcCwXiY6w8RtB51hbFZXB0OJN1QHPNapBByj4k_n8b0mv1JpjkoZ0HxQ_Q3HxisToCx6PQdsKZqnmgKK-G6FTIKPkLm8XbLgh7t0Ks9onKG1Zs-KnFB2zh2Q\", \"auth_time\": 1512526731}"
+        "extra_data": "{\"auth_time\": 1512526731, \"token_type\": \"Bearer\", \"expires\": 3600, \"access_token\": \"ya29.GlwaBadcCwXiY6w8RtB51hbFZXB0OJN1QHPNapBByj4k_n8b0mv1JpjkoZ0HxQ_Q3HxisToCx6PQdsKZqnmgKK-G6FTIKPkLm8XbLgh7t0Ks9onKG1Zs-KnFB2zh2Q\"}"
     }
 },
 {
@@ -822,7 +837,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "nigeljames.12@gmail.com",
-        "extra_data": "{\"access_token\": \"ya29.GlsYBX9W0xZrdvzLw7G8cqUzUZDCjs0fg0IK-tYxc5fMSlv7gJPHLK3YkcyhenNIU0YmIjtjOylzGnQ4XTYXDMGSI7Z0DWOirHIve5_4JfkaqCj2tnU0Ypuao0LO\", \"token_type\": \"Bearer\", \"expires\": 3600, \"auth_time\": 1512423059}"
+        "extra_data": "{\"auth_time\": 1512423059, \"token_type\": \"Bearer\", \"expires\": 3600, \"access_token\": \"ya29.GlsYBX9W0xZrdvzLw7G8cqUzUZDCjs0fg0IK-tYxc5fMSlv7gJPHLK3YkcyhenNIU0YmIjtjOylzGnQ4XTYXDMGSI7Z0DWOirHIve5_4JfkaqCj2tnU0Ypuao0LO\"}"
     }
 }
 ]
