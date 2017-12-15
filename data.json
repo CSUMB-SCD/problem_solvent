@@ -489,8 +489,8 @@
         "owner": [
             "manny42g"
         ],
-        "created": "2017-12-06T01:26:42.772Z",
-        "isSolved": false,
+        "created": "2017-12-06T01:26:42Z",
+        "isSolved": true,
         "user_solved": null,
         "description": "Clean water is scarce in my part of the country. We either have to travel 10+ miles for a clean water source and without a way of transporting huge amounts, we must manage with what we can carry.",
         "long_description": "Clean water is scarce in my part of the country. We either have to travel 10+ miles for a clean water source and without a way of transporting huge amounts, we must manage with what we can carry. I need help purifying the water from a lake that is closer to us. This purifier must be able to purify at least 2 gallons per day.",
@@ -630,7 +630,7 @@
         "problem": 22,
         "date": "2017-12-13T23:23:38Z",
         "text": "Try a carbon filter",
-        "isChosen": true,
+        "isChosen": false,
         "image": ""
     }
 },
@@ -663,11 +663,25 @@
     }
 },
 {
+    "model": "problems.solution",
+    "pk": 34,
+    "fields": {
+        "owner": [
+            "mgorbea"
+        ],
+        "problem": 22,
+        "date": "2017-12-15T05:07:17Z",
+        "text": "I have an extra filtration water bottle that you can have. This will filters 4,000 liters (1,056 Gallons) of water per cartridge.",
+        "isChosen": true,
+        "image": "media/_uploads/water_filter.jpg"
+    }
+},
+{
     "model": "account.organization",
     "pk": 1,
     "fields": {
         "name": "CSUMB",
-        "points": 18,
+        "points": 23,
         "rank": 1,
         "image": "media/_uploads/csumb.png"
     }
@@ -712,8 +726,8 @@
         "rank": 2,
         "org_rank": 0,
         "organization": 3,
-        "image": "",
-        "credential": null
+        "image": "media/_uploads/avatar1.png",
+        "credential": "IiI="
     }
 },
 {
@@ -721,10 +735,10 @@
     "pk": 11,
     "fields": {
         "points": 0,
-        "rank": 4,
+        "rank": 5,
         "org_rank": 0,
         "organization": 2,
-        "image": "",
+        "image": "media/_uploads/avatar2.png",
         "credential": "IiI="
     }
 },
@@ -733,10 +747,10 @@
     "pk": 13,
     "fields": {
         "points": 0,
-        "rank": 4,
+        "rank": 5,
         "org_rank": -1,
         "organization": 3,
-        "image": "",
+        "image": "media/_uploads/tony.png",
         "credential": "IiI="
     }
 },
@@ -744,11 +758,11 @@
     "model": "account.profile",
     "pk": 14,
     "fields": {
-        "points": 0,
+        "points": 5,
         "rank": 4,
         "org_rank": 0,
         "organization": 1,
-        "image": "",
+        "image": "media/_uploads/avatar4.png",
         "credential": "IiI="
     }
 },
@@ -757,7 +771,7 @@
     "pk": 16,
     "fields": {
         "points": 0,
-        "rank": 4,
+        "rank": 5,
         "org_rank": 0,
         "organization": 1,
         "image": "media/_uploads/turtle.jpg",
@@ -785,7 +799,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "mgorbea@csumb.edu",
-        "extra_data": "{\"expires\": 3600, \"auth_time\": 1512447123, \"token_type\": \"Bearer\", \"access_token\": \"ya29.GlwZBU8O_awLDPJVa0LNr0Itat683-ZeXw3Dy6v4dbwvD1pXKTbDf2N74EYfrEmCgdo_dIsJw0Kw4qn6je_Hwe1DWEJjMmBMFV1J9fRArCfu_qgltZsPzZsvd3EaXQ\"}"
+        "extra_data": "{\"auth_time\": 1512447123, \"token_type\": \"Bearer\", \"expires\": 3600, \"access_token\": \"ya29.GlwZBU8O_awLDPJVa0LNr0Itat683-ZeXw3Dy6v4dbwvD1pXKTbDf2N74EYfrEmCgdo_dIsJw0Kw4qn6je_Hwe1DWEJjMmBMFV1J9fRArCfu_qgltZsPzZsvd3EaXQ\"}"
     }
 },
 {
@@ -797,7 +811,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "gwcmonterey@gmail.com",
-        "extra_data": "{\"access_token\": \"ya29.GlsXBeMrFmyCm4QXMgk5GK7yFVEIGh5Ve5sc0fug7S0IfsjD3xKbFO0UrAgGVpClcOqhH57MKKe2ARASILWT0T1Olfm50VisLii_AqO0oINwrhjDCpcJ29dT3bp9\", \"expires\": 3600, \"token_type\": \"Bearer\", \"auth_time\": 1512334316}"
+        "extra_data": "{\"auth_time\": 1512334316, \"token_type\": \"Bearer\", \"expires\": 3600, \"access_token\": \"ya29.GlsXBeMrFmyCm4QXMgk5GK7yFVEIGh5Ve5sc0fug7S0IfsjD3xKbFO0UrAgGVpClcOqhH57MKKe2ARASILWT0T1Olfm50VisLii_AqO0oINwrhjDCpcJ29dT3bp9\"}"
     }
 },
 {
@@ -809,7 +823,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "nhardy@csumb.edu",
-        "extra_data": "{\"auth_time\": 1513214311, \"access_token\": \"ya29.GlwiBUfCZIi_xIQ1dFNiZaI8wg3NEA9hLFaVDJ56uBT77ak0dJUb9Qfo7p_fE3HBZm0tiBvM5HnVb5LsTNVcMNOFLJiBFXbtKcFhhORED9nanJZVu2dMMEYpZjGGmg\", \"token_type\": \"Bearer\", \"expires\": 3599}"
+        "extra_data": "{\"auth_time\": 1513214311, \"token_type\": \"Bearer\", \"expires\": 3599, \"access_token\": \"ya29.GlwiBUfCZIi_xIQ1dFNiZaI8wg3NEA9hLFaVDJ56uBT77ak0dJUb9Qfo7p_fE3HBZm0tiBvM5HnVb5LsTNVcMNOFLJiBFXbtKcFhhORED9nanJZVu2dMMEYpZjGGmg\"}"
     }
 },
 {
@@ -821,7 +835,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "manny42g@gmail.com",
-        "extra_data": "{\"expires\": 3600, \"auth_time\": 1512526731, \"token_type\": \"Bearer\", \"access_token\": \"ya29.GlwaBadcCwXiY6w8RtB51hbFZXB0OJN1QHPNapBByj4k_n8b0mv1JpjkoZ0HxQ_Q3HxisToCx6PQdsKZqnmgKK-G6FTIKPkLm8XbLgh7t0Ks9onKG1Zs-KnFB2zh2Q\"}"
+        "extra_data": "{\"auth_time\": 1512526731, \"token_type\": \"Bearer\", \"expires\": 3600, \"access_token\": \"ya29.GlwaBadcCwXiY6w8RtB51hbFZXB0OJN1QHPNapBByj4k_n8b0mv1JpjkoZ0HxQ_Q3HxisToCx6PQdsKZqnmgKK-G6FTIKPkLm8XbLgh7t0Ks9onKG1Zs-KnFB2zh2Q\"}"
     }
 },
 {
@@ -833,7 +847,7 @@
         ],
         "provider": "google-oauth2",
         "uid": "nigeljames.12@gmail.com",
-        "extra_data": "{\"access_token\": \"ya29.GlsYBX9W0xZrdvzLw7G8cqUzUZDCjs0fg0IK-tYxc5fMSlv7gJPHLK3YkcyhenNIU0YmIjtjOylzGnQ4XTYXDMGSI7Z0DWOirHIve5_4JfkaqCj2tnU0Ypuao0LO\", \"expires\": 3600, \"token_type\": \"Bearer\", \"auth_time\": 1512423059}"
+        "extra_data": "{\"auth_time\": 1512423059, \"token_type\": \"Bearer\", \"expires\": 3600, \"access_token\": \"ya29.GlsYBX9W0xZrdvzLw7G8cqUzUZDCjs0fg0IK-tYxc5fMSlv7gJPHLK3YkcyhenNIU0YmIjtjOylzGnQ4XTYXDMGSI7Z0DWOirHIve5_4JfkaqCj2tnU0Ypuao0LO\"}"
     }
 }
 ]

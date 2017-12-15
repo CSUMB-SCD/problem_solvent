@@ -8,6 +8,10 @@ See our [Wiki](https://github.com/CSUMB-SCD/problem_solvent/wiki) to learn about
 We have a Cloud9 workspace, so we can easily work on something and avoid merge conflicts. We also split up the tasks into backend, frontend, and deployment. Django also allows for separating the project into 'applications,' so we can each work on independent aspects of the project at the same time.
 ### Github commits don't reflect our contributions exactly because many were pushed from Cloud9. 
 
+### Known Issues
+Heroku by default uses an ephemeral file system and does not store the uploaded photos. It works perfect temporarily and works on cloud 9.
+
+We would need to implement buckets on an AWS S3 server and only having a 3 person group limited out capabilities. It would have been interesting to learn, but we did not have time.
 
 # Running the App
 1. Make sure you have setup the proper environment variables (PostgreSQL, Redis, Google Auth)
