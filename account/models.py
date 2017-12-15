@@ -4,7 +4,6 @@ from problems.models import Problem, Solution
 from oauth2client.contrib.django_util.models import CredentialsField
 
 
-
 class Organization(models.Model):
     # id (auto created)
     name = models.CharField(max_length=100)

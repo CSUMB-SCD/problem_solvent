@@ -1,7 +1,11 @@
 ## CircleCI Status [![CircleCI](https://circleci.com/gh/CSUMB-SCD/problem_solvent.svg?style=svg&circle-token=9bbddaaa4310633b363982d784075154253134f2)](https://circleci.com/gh/CSUMB-SCD/problem_solvent) 
 [CircleCI Link](https://circleci.com/gh/CSUMB-SCD/problem_solvent)
+
+## Wiki
+See our [Wiki](https://github.com/CSUMB-SCD/problem_solvent/wiki) to learn about our process.
+
 ## Our Strategy
-We have a Cloud9 workspace, so we can easily work on something and avoid merge conflicts. We also split up the tasks into backend, frontend, and deployment.
+We have a Cloud9 workspace, so we can easily work on something and avoid merge conflicts. We also split up the tasks into backend, frontend, and deployment. Django also allows for separating the project into 'applications,' so we can each work on independent aspects of the project at the same time.
 
 # Running the App
 1. Make sure you have setup the proper environment variables (PostgreSQL, Redis, Google Auth)
@@ -9,7 +13,7 @@ We have a Cloud9 workspace, so we can easily work on something and avoid merge c
 3. If port 5432 is giving error run: sudo service postgresql start
 4. If port 6379 is giving error run: sudo service redis-server start
 
-Go to website: [Heroku Application Link](https://problem-solvent.herokuapp.com) 
+Go to website: [Heroku Application Link](https://problem-solvent.herokuapp.com)
 
 ## Other useful Django commands
 
