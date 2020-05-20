@@ -13,7 +13,7 @@ defusedxml==0.5.0
 dj-database-url==0.4.2
 Django==1.11.6
 django-nose==1.4.5
-httplib2==0.10.3
+httplib2==0.18.0
 hyperlink==17.3.1
 idna==2.6
 incremental==17.5.0
