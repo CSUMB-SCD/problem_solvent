@@ -11,7 +11,7 @@ We have a Cloud9 workspace, so we can easily work on something and avoid merge c
 ### Known Issues
 Heroku by default uses an ephemeral file system and does not store the uploaded photos. It works perfect temporarily and works on cloud 9.
 
-We would need to implement buckets on an AWS S3 server and only having a 3 person group limited out capabilities. It would have been interesting to learn, but we did not have time.
+We would need to implement buckets on an AWS S3 server and only having a 3 person group limited our capabilities. It would have been interesting to learn, but we did not have time.
 
 # Running the App
 1. Make sure you have setup the proper environment variables (PostgreSQL, Redis, Google Auth)
