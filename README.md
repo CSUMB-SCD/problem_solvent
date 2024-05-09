@@ -1,5 +1,5 @@
 ## CircleCI Status [![CircleCI](https://circleci.com/gh/CSUMB-SCD/problem_solvent.svg?style=svg&circle-token=9bbddaaa4310633b363982d784075154253134f2)](https://circleci.com/gh/CSUMB-SCD/problem_solvent) 
-[CircleCI Link](https://circleci.com/gh/CSUMB-SCD/problem_solvent)
+[CircleCI Link (broken)](https://circleci.com/gh/CSUMB-SCD/problem_solvent)
 
 ## Wiki
 See our [Wiki](https://github.com/CSUMB-SCD/problem_solvent/wiki) to learn about our process.
@@ -19,7 +19,7 @@ We would need to implement buckets on an AWS S3 server and only having a 3 perso
 3. If port 5432 is giving error run: sudo service postgresql start
 4. If port 6379 is giving error run: sudo service redis-server start
 
-Go to website: [Heroku Application Link](https://problem-solvent.herokuapp.com)
+Go to website: [Heroku Application Link (broken)](https://problem-solvent.herokuapp.com)
 
 ## Other useful Django commands
 
